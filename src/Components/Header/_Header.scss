@@ -1,3 +1,8 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
 .App{
     &--logo{
         width: 100%;
@@ -8,7 +13,7 @@
         margin: 16px;
 
         &__right{
-            color: gray;
+            color: $mid-grey;
             margin-left: 3rem;
         }
         &__Button{
