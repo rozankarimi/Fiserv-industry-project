@@ -1,0 +1,14 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
+
+.splitbutton{
+    width: 100px;
+    // tbd
+    height: 100px;
+    // tbd
+    border: none;
+    border-radius: 10px;
+    background-color: lightgray;
+    text-transform: capitalize;
+}
