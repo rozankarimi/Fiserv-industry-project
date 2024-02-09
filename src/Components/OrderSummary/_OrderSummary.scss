@@ -1,0 +1,12 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+.hero{
+    margin: 16px;
+    color: $mid-grey;
+}
+.total{
+    margin: 16px;
+}
