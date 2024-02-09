@@ -1,0 +1,65 @@
+@import "../../styles/partials/_mixins.scss";
+@import "../../styles/partials/_variables.scss";
+// @import "../../styles/partials/_mixins.scss";
+.review-orders {
+  &__header {
+    // HEADER
+    padding: 0px 16px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    text-align: left;
+    text-transform: uppercase;
+    &__title {
+      font-weight: 200;
+    }
+    &__button {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+}
+
+.seats {
+  padding: 0px 16px;
+  display: none;
+  overflow: hidden;
+  // SEAT NUMBER
+  &__number {
+    text-align: left;
+    font-weight: 400;
+  }
+  &__item {
+    color: green;
+  }
+  // FOOD INFO
+  .food-item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    &__image {
+      height: 100px;
+      width: 100px;
+    }
+    &__name-quantity {
+      &--name {
+        font-weight: 400;
+      }
+      &--quantity {
+        font-weight: 400;
+      }
+    }
+    &__price {
+    }
+    font-weight: 400;
+  }
+}
+
+// JS DYNAMIC CLASS
+.seats-show {
+  display: block;
+}
+.display-none {
+  display: none;
+}
