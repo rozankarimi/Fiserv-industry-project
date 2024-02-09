@@ -1,0 +1,19 @@
+.App{
+    &--logo{
+        width: 100%;
+        height: 20rem;
+    }
+    &--SubHeader{
+        display: flex;
+        margin: 16px;
+
+        &__right{
+            color: gray;
+            margin-left: 3rem;
+        }
+        &__Button{
+            margin-left: 16px;
+        }
+
+    }
+}
