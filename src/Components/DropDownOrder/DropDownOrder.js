@@ -84,7 +84,7 @@ const DropDownOrder = (props) => {
           }}
         >
           <h2 className="review-orders__title">
-            {`review order(${totalItem}items)`}
+            {`review order(${totalItem} items)`}
           </h2>
           <p className="review-orders__buttons">
             <span className={`review-orders__show ${showOrderClass}`}>
@@ -98,8 +98,9 @@ const DropDownOrder = (props) => {
         {totalSeats.map((item, index) => {
           return (
             <section className="seats__item" key={index}>
+              {/* SEAT NO  */}
               <h2 className="seats__number">{`Seat ${index + 1}`}</h2>
-
+              {/* FOOD ITEM INFO */}
               {item.map((_item) => {
                 return (
                   <div className="food-item-info" key={`${_item.id}`}>
@@ -113,7 +114,7 @@ const DropDownOrder = (props) => {
                         {_item.name}
                       </h2>
                       <h2 className="food-item-info__name-quantity--quantity">
-                        {_item.quantity}
+                        {`Qty:${_item.quantity}`}
                       </h2>
                     </div>
                     <h2 className="food-item-info__price">{`$${_item.price}`}</h2>
