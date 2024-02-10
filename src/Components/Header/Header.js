@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./_Header.scss";
 import siteLogo from "../../assets/Fiserv-logo-1024x577-1451217154.png";
 
