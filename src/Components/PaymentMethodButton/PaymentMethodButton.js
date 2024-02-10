@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./PaymentMethodButton.scss";
+import appleLogo from "../../assets/images/apple pay.svg";
 const PaymentMethodButton = () => {
   const [selectCreditCard, setSelectCreditCard] = useState(true);
   const [selectApplePay, setSelectApplePay] = useState(false);
@@ -37,7 +38,14 @@ const PaymentMethodButton = () => {
               handleApplePay();
             }}
           ></span>
-          <p className="buttons__button-container--text">Pay with apple pay</p>
+          <p className="buttons__button-container--text apple-pay-container">
+            <span>Pay with</span>{" "}
+            <img
+              src={appleLogo}
+              alt="apple-pay-logo"
+              className="apple-pay-logo"
+            />
+          </p>
         </div>
       </section>
     </>
