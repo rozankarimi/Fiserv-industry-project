@@ -1,6 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 import DropDownOrder from "./Components/DropDownOrder/DropDownOrder";
+import LoadingPage from "./Components/LoadingPage/LoadingPage";
+
 function App() {
   return (
     <div className="App">
