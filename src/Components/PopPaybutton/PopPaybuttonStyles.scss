@@ -1,0 +1,27 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
+
+.paybutton{
+    padding: 0rem;
+    width: 361px;
+    // width: 100%;
+    // how should width of button be controlled/styled, but the child of parent...
+    aspect-ratio: 1/0.105263;
+    border: none;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    text-transform: capitalize;
+    font-size: 18px;
+
+    // effects and animations
+    
+    &:hover{
+        background-color: rgb(75, 75, 75);
+    }
+
+    &:active{
+        background-color: rgb(39, 39, 39);
+    }
+}
