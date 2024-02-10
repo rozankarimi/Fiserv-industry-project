@@ -1,6 +1,6 @@
-// @use "../../styles/partials/fonts" as *;
-// @use "../../styles/partials/variables.scss" as *;
-// @use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
 
 .App{
     &--header{
@@ -8,8 +8,12 @@
         background-size:cover;
         background-position: center;
         background-repeat: no-repeat;
-        border-radius:0 0 25% 25%;
-        // transform: translate(-10%, -10%);
+        border-radius:0 0 15% 15%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        
 
         &__text{
             position: relative;
