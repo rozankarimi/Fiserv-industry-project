@@ -2,6 +2,9 @@
 @import "../../styles/partials/_variables.scss";
 // @import "../../styles/partials/_mixins.scss";
 .review-orders {
+  margin-top: 16px;
+  margin-bottom: 19px;
+
   &__header {
     // HEADER
     display: flex;
@@ -14,13 +17,19 @@
   &__title {
     font-weight: 700;
     font-size: 18px;
-    color: rgba(156, 156, 156, 1);
-    margin-bottom: 0px;
+    margin: 0px;
   }
   &__buttons {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
+    margin: 0px;
+    padding: 0px;
+    &--logo {
+      height: 18px;
+      margin: 0px;
+      padding:0px;
+    }
   }
 
   .point-up {
@@ -79,6 +88,7 @@
   padding: 0px 16px;
   display: none;
   overflow: hidden;
+  margin: 0px;
 
   // SEAT NUMBER
   &__number {
@@ -92,7 +102,7 @@
     border: 1px solid rgba(156, 156, 156, 0.4);
     border-radius: 6px;
     padding: 10px;
-    // margin-bottom: 4px;
+    margin-bottom: 16px;
   }
   // FOOD INFO
   .food-item-info {
@@ -106,7 +116,7 @@
       border-radius: 6px;
     }
     &__name-quantity {
-      padding: 0px 10px;
+      padding: 0px 12px;
       margin: 0px;
       text-align: left;
       width: 100%;

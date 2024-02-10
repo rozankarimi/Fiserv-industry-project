@@ -81,13 +81,15 @@ const DropDownOrder = (props) => {
           <h2 className="review-orders__title">
             {`review order(${totalItem} items)`}
           </h2>
-          <p className="review-orders__buttons">
+          <div className="review-orders__buttons">
             <img
               src={dropDownButton}
               alt="button"
-              className={showOrder ? "point-up" : "point-down"}
+              className={`review-orders__buttons--logo ${
+                showOrder ? "point-up" : "point-down"
+              }`}
             />
-          </p>
+          </div>
         </div>
       </section>
       <article className={`seats ${seatClass}`}>
@@ -110,7 +112,7 @@ const DropDownOrder = (props) => {
                         {_item.name}
                       </h2>
                       <h2 className="food-item-info__name-quantity--quantity">
-                        {`Qty:${_item.quantity}`}
+                        {`Qty: ${_item.quantity}`}
                       </h2>
                     </div>
                     <h2 className="food-item-info__price">{`$${_item.price}`}</h2>
