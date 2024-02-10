@@ -6,7 +6,6 @@ import PaymentMethodButton from "./Components/PaymentMethodButton/PaymentMethodB
 function App() {
   return (
     <div className="App">
-      <LoadingPage />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
