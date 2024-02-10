@@ -25,6 +25,16 @@
       margin-right: 16px;
       border: 1px solid #000;
     }
+    .apple-pay-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .apple-pay-logo{
+      display: inline-block;
+      padding-top: 3px;
+      height: 16px;
+    }
     .selected-payment-method {
       background-color: #000;
     }
