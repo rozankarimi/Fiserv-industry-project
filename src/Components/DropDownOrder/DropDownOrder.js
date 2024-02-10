@@ -1,5 +1,6 @@
 import "./DropDownOrder.scss";
 import { useState } from "react";
+import dropDownButton from "../../assets/images/bxs_up-arrow.svg";
 const DropDownOrder = (props) => {
   const { currentSeat, setCurrentSit } = useState(1);
   const [totalItem, setTotalItems] = useState(5);
@@ -52,8 +53,7 @@ const DropDownOrder = (props) => {
     ],
   ]);
   const [seatClass, setSeatClass] = useState("");
-  const [showOrderClass, setShowOrderClass] = useState("");
-  const [hideOrderClass, setHideOrderClass] = useState("display-none");
+  const [showOrder, setShowOrder] = useState(true);
 
   const hadleDropDownClass = () => {
     if (!seatClass) {
@@ -62,15 +62,10 @@ const DropDownOrder = (props) => {
       setSeatClass("");
     }
 
-    if (!showOrderClass) {
-      setShowOrderClass("display-none");
+    if (showOrder) {
+      setShowOrder(false);
     } else {
-      setShowOrderClass("");
-    }
-    if (!hideOrderClass) {
-      setHideOrderClass("display-none");
-    } else {
-      setHideOrderClass("");
+      setShowOrder(true);
     }
   };
 
@@ -86,12 +81,15 @@ const DropDownOrder = (props) => {
           <h2 className="review-orders__title">
             {`review order(${totalItem} items)`}
           </h2>
-          <p className="review-orders__buttons">
-            <span className={`review-orders__show ${showOrderClass}`}>
-              show
-            </span>
-            <span className={`review-order__hide ${hideOrderClass}`}>hide</span>
-          </p>
+          <div className="review-orders__buttons">
+            <img
+              src={dropDownButton}
+              alt="button"
+              className={`review-orders__buttons--logo ${
+                showOrder ? "point-up" : "point-down"
+              }`}
+            />
+          </div>
         </div>
       </section>
       <article className={`seats ${seatClass}`}>
@@ -114,7 +112,7 @@ const DropDownOrder = (props) => {
                         {_item.name}
                       </h2>
                       <h2 className="food-item-info__name-quantity--quantity">
-                        {`Qty:${_item.quantity}`}
+                        {`Qty: ${_item.quantity}`}
                       </h2>
                     </div>
                     <h2 className="food-item-info__price">{`$${_item.price}`}</h2>
