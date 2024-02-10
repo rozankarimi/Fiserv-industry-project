@@ -1,12 +1,17 @@
-import logo from "./logo.svg";
-// import "./App.css";
-// import DropDownOrder from "./Components/DropDownOrder/DropDownOrder";
-import LoadingPage from "./Components/LoadingPage/LoadingPage";
-import PaymentMethodButton from "./Components/PaymentMethodButton/PaymentMethodButton";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./Components/Header/Header";
+import HomePage from "./Pages/HomePage/HomePage";
+import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 function App() {
   return (
     <div className="App">
-
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/paymentPage" element={<PaymentPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

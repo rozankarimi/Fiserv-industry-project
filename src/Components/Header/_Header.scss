@@ -1,36 +1,36 @@
-@use "../../styles/partials/fonts" as *;
-@use "../../styles/partials/variables.scss" as *;
-@use "../../styles/partials/mixins.scss" as *;
+// @use "../../styles/partials/fonts" as *;
+// @use "../../styles/partials/variables.scss" as *;
+// @use "../../styles/partials/mixins.scss" as *;
 
 
-.App{
-    &--logo{
-        width: 100%;
-        height: 6rem;
-    }
-    &--SubHeader{
-        display: flex;
-        margin: 16px;
+// .App{
+//     &--logo{
+//         width: 100%;
+//         height: 6rem;
+//     }
+//     &--SubHeader{
+//         display: flex;
+//         margin: 16px;
 
-        &__right{
-            color: $mid-grey;
-            margin-left: 3rem;
-        }
-        &__Button{
-            margin-left: 16px;
-            width: 55%;
-            font-size: medium;
-        }
+//         &__right{
+//             color: $mid-grey;
+//             margin-left: 3rem;
+//         }
+//         &__Button{
+//             margin-left: 16px;
+//             width: 55%;
+//             font-size: medium;
+//         }
         
-    } 
-}
-#accept{
-    margin: 16px; 
-}
-.checkbox{
-    background-color: $dark-grey;
-}
-.link{
-    text-decoration: none;
-    margin-left: 10px;
-}
+//     } 
+// }
+// #accept{
+//     margin: 16px; 
+// }
+// .checkbox{
+//     background-color: $dark-grey;
+// }
+// .link{
+//     text-decoration: none;
+//     margin-left: 10px;
+// }
