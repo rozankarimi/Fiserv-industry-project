@@ -17,10 +17,61 @@
     color: rgba(156, 156, 156, 1);
     margin-bottom: 0px;
   }
-  &__button {
+  &__buttons {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+  }
+
+  .point-up {
+    -webkit-animation: point-up 0.5s linear; /* Safari */
+    animation: point-up 0.5s linear;
+    animation-fill-mode: forwards;
+  }
+  .point-down {
+    -webkit-animation: point-down 0.5s linear; /* Safari */
+    animation: point-down 0.5s linear;
+    animation-fill-mode: forwards;
+  }
+
+  // point-down
+  /* Safari */
+  @-webkit-keyframes point-down {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(180deg);
+    }
+  }
+
+  @keyframes point-down {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  // point up
+  /* Safari */
+  @-webkit-keyframes point-up {
+    0% {
+      -webkit-transform: rotate(180deg);
+    }
+    100% {
+      -webkit-transform: rotate(0deg);
+    }
+  }
+
+  @keyframes point-up {
+    0% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
 }
 
@@ -28,21 +79,27 @@
   padding: 0px 16px;
   display: none;
   overflow: hidden;
+
   // SEAT NUMBER
   &__number {
     text-align: left;
     font-weight: 400;
     font-size: 18px;
+    margin-top: 0px;
     margin-bottom: 5px;
   }
-  //   &__item {
-  //     color: green;
-  //   }
+  &__item {
+    border: 1px solid rgba(156, 156, 156, 0.4);
+    border-radius: 6px;
+    padding: 10px;
+    // margin-bottom: 4px;
+  }
   // FOOD INFO
   .food-item-info {
     display: flex;
     justify-content: space-between;
     margin-bottom: 4px;
+
     &__image {
       height: 100px;
       width: 100px;

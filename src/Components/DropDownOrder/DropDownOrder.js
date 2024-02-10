@@ -1,5 +1,6 @@
 import "./DropDownOrder.scss";
 import { useState } from "react";
+import dropDownButton from "../../assets/images/bxs_up-arrow.svg";
 const DropDownOrder = (props) => {
   const { currentSeat, setCurrentSit } = useState(1);
   const [totalItem, setTotalItems] = useState(5);
@@ -52,8 +53,7 @@ const DropDownOrder = (props) => {
     ],
   ]);
   const [seatClass, setSeatClass] = useState("");
-  const [showOrderClass, setShowOrderClass] = useState("");
-  const [hideOrderClass, setHideOrderClass] = useState("display-none");
+  const [showOrder, setShowOrder] = useState(true);
 
   const hadleDropDownClass = () => {
     if (!seatClass) {
@@ -62,15 +62,10 @@ const DropDownOrder = (props) => {
       setSeatClass("");
     }
 
-    if (!showOrderClass) {
-      setShowOrderClass("display-none");
+    if (showOrder) {
+      setShowOrder(false);
     } else {
-      setShowOrderClass("");
-    }
-    if (!hideOrderClass) {
-      setHideOrderClass("display-none");
-    } else {
-      setHideOrderClass("");
+      setShowOrder(true);
     }
   };
 
@@ -87,10 +82,11 @@ const DropDownOrder = (props) => {
             {`review order(${totalItem} items)`}
           </h2>
           <p className="review-orders__buttons">
-            <span className={`review-orders__show ${showOrderClass}`}>
-              show
-            </span>
-            <span className={`review-order__hide ${hideOrderClass}`}>hide</span>
+            <img
+              src={dropDownButton}
+              alt="button"
+              className={showOrder ? "point-up" : "point-down"}
+            />
           </p>
         </div>
       </section>
