@@ -1,10 +1,10 @@
 import "./_paypaybutton_styles.scss";
 
-export default function PayPayButton() {
+export default function PayPayButton({ price }) {
   function payButtonHandler() {}
   return (
-    <button onclick={payButtonHandler} className="paypaybutton">
-      pay
+    <button onclick={payButtonHandler} className="paybutton">
+      Pay ${price} Now
     </button>
   );
 }

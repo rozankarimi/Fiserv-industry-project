@@ -2,13 +2,19 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/fonts";
 
-.paypaybutton{
-    width: 100px;
-    // tbd
-    height: 100px;
-    // tbd
+.paybutton{
+    padding: 0rem;
+    width: 361px;
+    // width: 100%;
+    // how should width of button be controlled/styled, but the child of parent...
+    aspect-ratio: 1/0.105263;
     border: none;
-    border-radius: 10px;
-    background-color: lightgray;
+    border-radius: 15px;
+    background-color: $buttonsplash;
+    color: $buttontext;
     text-transform: capitalize;
+    animation-name: example;
+    animation-duration: 2s;
+
+    // effects and animations
 }

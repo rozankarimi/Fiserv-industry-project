@@ -1,15 +1,11 @@
 import logo from "./logo.svg";
 // import "./App.css";
-import SplitPayButton from "./component/splitpaybutton/splitpaybutton";
-import PayPayButton from "./component/paypaybutton/paypaybutton";
-import SeatPayButton from "./component/seatpaybutton/seatpaybutton";
+import PayPayButton from "./Component/paypaybutton/paypaybutton";
 
 function App() {
   return (
     <div className="App">
-      <SplitPayButton />
-      <PayPayButton />
-      <SeatPayButton />
+      <PayPayButton price={12.23} />
     </div>
   );
 }
