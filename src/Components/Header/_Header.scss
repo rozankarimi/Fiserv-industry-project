@@ -1,36 +1,36 @@
-// @use "../../styles/partials/fonts" as *;
-// @use "../../styles/partials/variables.scss" as *;
-// @use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
 
-
-// .App{
-//     &--logo{
-//         width: 100%;
-//         height: 6rem;
-//     }
-//     &--SubHeader{
-//         display: flex;
-//         margin: 16px;
-
-//         &__right{
-//             color: $mid-grey;
-//             margin-left: 3rem;
-//         }
-//         &__Button{
-//             margin-left: 16px;
-//             width: 55%;
-//             font-size: medium;
-//         }
+.App{
+    &--header{
+        background-image: url(../../assets/images/tamas-pap-zali_zGDWo8-unsplash.jpg);
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius:0 0 15% 15%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
         
-//     } 
-// }
-// #accept{
-//     margin: 16px; 
-// }
-// .checkbox{
-//     background-color: $dark-grey;
-// }
-// .link{
-//     text-decoration: none;
-//     margin-left: 10px;
-// }
+
+        &__text{
+            position: relative;
+            width: 70%;
+            top: 10px;
+            left: 50px;
+            text-align: center;
+            color: $buttontext;
+            
+        }
+        &__Subtext{
+            position: relative;
+            border-radius: 8px;
+            bottom: 20px;
+            background-color: 	#c9caca;
+            
+        }
+    }
+}
+

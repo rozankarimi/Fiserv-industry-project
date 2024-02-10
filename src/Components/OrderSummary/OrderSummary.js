@@ -5,13 +5,13 @@ function OrderSummary() {
   return (
     <>
       <div className="hero">
-        <h3>ORDER SUMMARY</h3>
+        <h3>Table Summary</h3>
         <p>Subtotal</p>
         <p>NYC Tax(8.875%)</p>
         <p>
           Gratuity(18%)
           <a href="/" className="link">
-            Change
+            Update
           </a>
         </p>
       </div>
