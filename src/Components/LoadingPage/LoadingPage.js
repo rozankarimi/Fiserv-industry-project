@@ -5,12 +5,14 @@ const LoadingPage = () => {
       <section className="loading-page">
         {/* SHADE */}
         <section className="loading-page__shade"></section>
-        <div className="loading-page__nav">
-          <p>{`<`}</p>
-          <p className="loading-page__nav--text">loading</p>
-        </div>
+
         <section className="loading-page__loader-container">
-          <div className="loading-page__loader-container--loader"></div>
+          <div>
+            <div className="loading-page__loader-container--loader"></div>
+            <p className="loading-page__loader-container--text">
+              Loading... Please wait
+            </p>
+          </div>
         </section>
       </section>
     </>
