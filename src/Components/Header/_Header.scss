@@ -25,10 +25,13 @@
             
         }
         &__Subtext{
+            width: 266px;
+            padding:0 10px;
             position: relative;
             border-radius: 8px;
-            bottom: 20px;
-            background-color: 	#c9caca;
+            bottom: 10px;
+            left: 70px;
+            background-color: $boxBG;
             
         }
     }
