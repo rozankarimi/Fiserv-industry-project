@@ -1,0 +1,21 @@
+.popup-overlay{
+    // background-color: red;
+    // position: relative!important;
+    display: flex!important;
+    flex-direction: column;
+    justify-content: flex-end!important;
+}
+
+.popup-content{
+    // background-color: blue;
+    // margin: 0rem!important;
+    // position: fixed;
+    margin-top: 1000rem !important;
+}
+
+.wrapperpopup{
+    background-color: green;
+    width: 100vw;
+    height: 70vh;
+    // margin: 0rem;
+}
