@@ -15,4 +15,29 @@
     background-color: green;
     width: 100vw;
     height: 70vh;
+    display: flex;
+    flex-direction:column;
+}
+
+.payment{
+    display: flex;
+    flex-direction: column;
+
+    &__formbottom{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .am{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .section3, .section4, .section5{
+        width: 50%;
+    }
+    
 }
