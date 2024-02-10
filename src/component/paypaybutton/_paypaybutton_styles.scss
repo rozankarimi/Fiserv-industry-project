@@ -13,8 +13,13 @@
     background-color: $buttonsplash;
     color: $buttontext;
     text-transform: capitalize;
-    animation-name: example;
-    animation-duration: 2s;
 
     // effects and animations
+    &:hover{
+        background-color: rgb(75, 75, 75);
+    }
+
+    &:active{
+        background-color: rgb(39, 39, 39);
+    }
 }
