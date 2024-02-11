@@ -5,7 +5,7 @@ import Popup from "reactjs-popup";
 import zelleLogo from "../../assets/images/zellelogocropped.png";
 import applePayLogo from "../../assets/images/applepaylogo-white.png";
 
-import Aaa from "../PayPopUpMessage/PayPopUpMessageComp";
+import PayPopUpMessageComp from "../PayPopUpMessage/PayPopUpMessageComp";
 
 export default function PayWithButton({ method, text, classplaceholder }) {
   const [statusLight, setStatusLight] = useState(<div></div>);
@@ -35,7 +35,7 @@ export default function PayWithButton({ method, text, classplaceholder }) {
         </button>
       }
     >
-      <Aaa />
+      <PayPopUpMessageComp paymentmethod="soemhtogn" />
     </Popup>
   );
 }
