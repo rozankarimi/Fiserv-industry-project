@@ -1,7 +1,7 @@
-import "./GeneralPaymentFormPageStyles.scss";
-import Footer from "../Footer/Footer";
-import PayWithButton from "../PayWithButton/PayWithButton";
-import ComfirmPayment from "../GeneralButton/GeneralButton";
+import "./PaymentFormPage2Styles.scss";
+import Footer from "../../Components/Footer/Footer";
+import PayWithButton from "../../Components/PayWithButton/PayWithButton";
+import ComfirmPayment from "../../Components/GeneralButton/GeneralButton";
 
 export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
   payMethod = "Seat";
