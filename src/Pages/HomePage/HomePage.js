@@ -52,7 +52,7 @@ const HomePage = () => {
       <>
         <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
         <PaymentMethodButton />
-        <OrderSummary />
+        <OrderSummary reviewOrders={reviewOrders} />
         <Gratuity />
       </>
     );
