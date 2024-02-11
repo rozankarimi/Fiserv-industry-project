@@ -1,129 +1,88 @@
 import "./DropDownOrder.scss";
-import { useState } from "react";
-import dropDownButton from "../../assets/images/bxs_up-arrow.svg";
+import { useEffect, useState } from "react";
+import arraySort from "array-sort";
+import { v4 as uuidv4 } from "uuid";
+
 const DropDownOrder = (props) => {
-  const { currentSeat, setCurrentSit } = useState(1);
-  const [totalItem, setTotalItems] = useState(5);
-  const [totalSeats, setTotalSeats] = useState([
-    [
-      {
-        id: 1,
-        name: "Sashimi",
-        img_src:
-          "https://publish.purewow.net/wp-content/uploads/sites/2/2022/04/types-of-sushi-sashimi.jpg?fit=728%2C524",
-        quantity: 2,
-        price: "18.00",
-      },
-      {
-        id: 2,
-        name: "Nigiri",
-        img_src:
-          "https://publish.purewow.net/wp-content/uploads/sites/2/2022/04/types-of-sushi-maki.jpg?fit=728%2C524",
-        quantity: 1,
-        price: "18.00",
-      },
-    ],
-    [
-      {
-        id: 3,
-        name: "Maki",
-        img_src:
-          "https://publish.purewow.net/wp-content/uploads/sites/2/2022/04/types-of-sushi-uramaki.jpg?fit=680%2C489",
-        quantity: 2,
-        price: "18.00",
-      },
-      {
-        id: 4,
-        name: "Uramaki",
-        img_src:
-          "https://publish.purewow.net/wp-content/uploads/sites/2/2022/04/types-of-sushi-temaki.jpg?fit=680%2C489",
-        quantity: 4,
-        price: "18.00",
-      },
-    ],
-    [
-      {
-        id: 5,
-        name: "Temaki",
-        img_src:
-          "https://publish.purewow.net/wp-content/uploads/sites/2/2022/04/types-of-sushi-gunkan.jpg?fit=728%2C524",
-        quantity: 2,
-        price: "18.00",
-      },
-    ],
-  ]);
-  const [seatClass, setSeatClass] = useState("");
-  const [showOrder, setShowOrder] = useState(true);
+  // console.log(props.customers);
+  // console.log(props.reviewOrders);
+  const [seats, setSeats] = useState([]);
+  const [isSorted, setIsSorted] = useState(false);
 
-  const hadleDropDownClass = () => {
-    if (!seatClass) {
-      setSeatClass("seats-show");
-    } else {
-      setSeatClass("");
+  const sortRevieworder = () => {
+    const seats = [];
+    for (let index = 0; index < props.customers.length; index++) {
+      let customerId = index + 1;
+
+      const arrayInstance = props.reviewOrders.filter((item) => {
+        return item.ordering_party === customerId;
+      });
+      seats.push(arrayInstance);
     }
 
-    if (showOrder) {
-      setShowOrder(false);
-    } else {
-      setShowOrder(true);
-    }
+    setSeats(seats);
+    setIsSorted(true);
   };
 
-  return (
-    <>
-      <section className="review-orders">
-        <div
-          className="review-orders__header"
-          onClick={() => {
-            hadleDropDownClass();
-          }}
-        >
-          <h2 className="review-orders__title">
-            {`review order(${totalItem} items)`}
-          </h2>
-          <div className="review-orders__buttons">
-            <img
-              src={dropDownButton}
-              alt="button"
-              className={`review-orders__buttons--logo ${
-                showOrder ? "point-up" : "point-down"
-              }`}
-            />
+  useEffect(() => {
+    sortRevieworder();
+  }, []);
+
+  if (isSorted) {
+    return (
+      <>
+        <section className="review-orders">
+          <div className="review-orders__header">
+            <h2 className="review-orders__title">
+              {`review order(${props.reviewOrders.length} items)`}
+            </h2>
+            <h2 className="review-orders__guests">{`${props.customers.length} Guests`}</h2>
           </div>
-        </div>
-      </section>
-      <article className={`seats ${seatClass}`}>
-        {totalSeats.map((item, index) => {
-          return (
-            <section className="seats__item" key={index}>
-              {/* SEAT NO  */}
-              <h2 className="seats__number">{`Seat ${index + 1}`}</h2>
-              {/* FOOD ITEM INFO */}
-              {item.map((_item) => {
-                return (
-                  <div className="food-item-info" key={`${_item.id}`}>
-                    <img
-                      src={_item.img_src}
-                      alt={`${_item.name}`}
-                      className="food-item-info__image"
-                    />
-                    <div className="food-item-info__name-quantity">
-                      <h2 className="food-item-info__name-quantity--name">
-                        {_item.name}
-                      </h2>
-                      <h2 className="food-item-info__name-quantity--quantity">
-                        {`Qty: ${_item.quantity}`}
-                      </h2>
-                    </div>
-                    <h2 className="food-item-info__price">{`$${_item.price}`}</h2>
-                  </div>
-                );
-              })}
-            </section>
-          );
-        })}
-      </article>
-    </>
-  );
+        </section>
+        <article className="seats">
+          {seats.map((item, index) => {
+            // VARIABLE TO STORE ODERING PARTY SUBTOTAL****
+            let totalPrice;
+            return (
+              <section className="seats__item" key={uuidv4()}>
+                {/* SEAT NO  */}
+                <h2 className="seats__number">{`Seat ${index + 1}`}</h2>
+                {/* FOOD ITEM INFO */}
+                {item.map((_item, index) => {
+                  // SET ORDERING PARTY SUBTOTAL****
+                  totalPrice = _item.ordering_party_subtotal;
+                  return (
+                    <section key={uuidv4()}>
+                      <div className="food-item-info">
+                        <img
+                          src={_item.item_image}
+                          alt={`${_item.item_name}`}
+                          className="food-item-info__image"
+                        />
+                        <div className="food-item-info__name-quantity">
+                          <h2 className="food-item-info__name-quantity--name">
+                            {_item.item_name}
+                          </h2>
+                          <h2 className="food-item-info__name-quantity--quantity">
+                            {`Qty: ${_item.order_quantity}`}
+                          </h2>
+                        </div>
+                        <h2 className="food-item-info__price">{`$${_item.price}`}</h2>
+                      </div>
+                    </section>
+                  );
+                })}
+                <p className="total-price">
+                  *Include Taxes and Fees 
+                  <span className="total-price__price">  ${totalPrice}</span>
+                </p>
+              </section>
+            );
+          })}
+        </article>
+      </>
+    );
+  }
 };
+
 export default DropDownOrder;

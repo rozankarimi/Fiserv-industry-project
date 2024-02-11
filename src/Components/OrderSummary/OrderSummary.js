@@ -1,14 +1,30 @@
 import "./_OrderSummary.scss";
 import React from "react";
+import { useState, useEffect } from "react";
 
-function OrderSummary() {
+function OrderSummary({ loadgratuity, setloadgratuity, reviewOrders }) {
+  console.log(reviewOrders);
+  const [subTotal, setSubTotal] = useState(0);
+
+  const getSubtotal = () => {
+    let totalPrice = 0;
+    reviewOrders.forEach((item) => {
+      totalPrice = totalPrice + item.item_total;
+    });
+    setSubTotal(totalPrice);
+  };
+
+  useEffect(() => {
+    getSubtotal();
+  }, []);
+
   return (
     <>
       <h3 className="header">Table Summary</h3>
       <div className="hero">
         <div className="hero__price">
           <p>Subtotal</p>
-          <p>$153.50</p>
+          <p>${subTotal}</p>
         </div>
         <div className="hero__price">
           <p>NYC Tax(8.875%)</p>
@@ -17,9 +33,9 @@ function OrderSummary() {
         <div className="hero__price">
           <p>
             Gratuity(18%)
-            <a href="/" className="link">
+            <span onClick={() => setloadgratuity(true)} className="link">
               Update
-            </a>
+            </span>
           </p>
           <p>$30.08</p>
         </div>
