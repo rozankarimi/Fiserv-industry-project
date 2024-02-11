@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import PaymentSuccessPage from "./Pages/PaymentSuccessPage/PaymentSuccessPage";
-import Some from "./Components/GeneralPaymentFormPageComp/GeneralPaymentFormPage";
+import Some from "./Components/PaymentFormStep2Comp/GeneralPaymentFormPage";
 
 function App() {
   return (
