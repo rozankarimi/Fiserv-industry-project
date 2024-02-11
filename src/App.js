@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./Components/Header/Header";
+// import Header from "./Components/Header/Header";
 import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
-import Pay1 from "./Pages/PaymentOpPay1Page/PaymentOpPay1Page";
+import Pay1 from "./Pages/GeneralPaymentOpPayPage/GeneralPaymentOpPayPage";
 function App() {
   return (
     <div className="App">
