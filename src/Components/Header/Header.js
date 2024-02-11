@@ -19,7 +19,6 @@ class Header extends Component {
           </div>
         </div>
         <button type="text" className="App--SubHeader__Button">
-          {" "}
           Request your server, Jack
         </button>
       </div>
