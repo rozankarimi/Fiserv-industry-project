@@ -6,6 +6,7 @@ import OrderSummary from "../../Components/OrderSummary/OrderSummary";
 import Gratuity from "../../Components/Gratuity/Gratuity";
 const HomePage = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [loadgratuity, setloadgratuity] = useState(false);
 
   setTimeout(() => {
     setHasLoaded(true);
@@ -15,8 +16,11 @@ const HomePage = () => {
       <>
         <PaymentMethodButton />
         <DropDownOrder />
-        <OrderSummary />
-        <Gratuity />
+        <OrderSummary
+          loadgratuity={loadgratuity}
+          setloadgratuity={setloadgratuity}
+        />
+        {loadgratuity === true ? <Gratuity /> : null}
       </>
     );
   }
