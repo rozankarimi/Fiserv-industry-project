@@ -6,14 +6,15 @@ import PaymentSuccessPage from "./Pages/PaymentSuccessPage/PaymentSuccessPage";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/paymentPage" element={<PaymentPage />} />
           <Route path="/paymentSuccessPage" element={<PaymentSuccessPage />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <PaymentSuccessPage />
     </div>
   );
 }

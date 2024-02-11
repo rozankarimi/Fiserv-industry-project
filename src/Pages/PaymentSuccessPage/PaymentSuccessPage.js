@@ -1,6 +1,7 @@
 import "./PaymentSuccessStyles.scss";
 import checkmark from "../../assets/images/checkmark.png";
 import FinalComfirmPayButton from "../../Components/GeneralButton/GeneralButton";
+import TableSummary from "../../Components/OrderSummary/OrderSummary";
 
 export default function PaymentSuccessPage() {
   return (
@@ -10,7 +11,9 @@ export default function PaymentSuccessPage() {
       <div className="paymentsucccesspage__message">
         Your Payment was Succesful
       </div>
-      <div className="paymentsummarywrapper">{/* waiting for component */}</div>
+      <div className="paymentsummarywrapper">
+        <TableSummary />
+      </div>
       <FinalComfirmPayButton
         text="Comfirm Split Payments"
         buttonclass="finalcomfirmbutton"
