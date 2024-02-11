@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import PaymentSuccessPage from "./Pages/PaymentSuccessPage/PaymentSuccessPage";
+import Some from "./Components/GeneralPaymentFormPageComp/GeneralPaymentFormPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/paymentSuccessPage" element={<PaymentSuccessPage />} />
         </Routes>
       </BrowserRouter> */}
+      <Some />
     </div>
   );
 }
