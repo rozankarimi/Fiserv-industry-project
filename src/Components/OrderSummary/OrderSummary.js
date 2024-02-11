@@ -1,7 +1,7 @@
 import "./_OrderSummary.scss";
 import React from "react";
 
-function OrderSummary() {
+function OrderSummary({ loadgratuity, setloadgratuity }) {
   return (
     <>
       <h3 className="header">Table Summary</h3>
@@ -17,9 +17,9 @@ function OrderSummary() {
         <div className="hero__price">
           <p>
             Gratuity(18%)
-            <a href="/" className="link">
+            <span onClick={() => setloadgratuity(true)} className="link">
               Update
-            </a>
+            </span>
           </p>
           <p>$30.08</p>
         </div>
