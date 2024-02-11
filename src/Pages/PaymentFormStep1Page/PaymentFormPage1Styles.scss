@@ -44,13 +44,13 @@
     align-items: center;
     flex-grow: 1;
     &__titlewrap{
+        margin-bottom: 4rem;
         font-size: 22px;
         font-weight: 500;
     }
 
-    &__messagewrap{
-        font-size: 14px;
-        font-weight: 500;
+    &__progresswrap{
+        margin-bottom: 7rem;
     }
 
     &__paymentmeans{

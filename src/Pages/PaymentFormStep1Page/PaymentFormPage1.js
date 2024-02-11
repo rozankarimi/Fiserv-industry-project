@@ -4,6 +4,8 @@ import PayWithButton from "../../Components/PayWithButton/PayWithButton";
 import ComfirmPayment from "../../Components/GeneralButton/GeneralButton";
 
 export default function PaymentOpPay1({ seatvalue }) {
+  seatvalue = 1;
+  let buttontext = `Start Seat ${seatvalue} Payment`;
   return (
     <div className="formstep2">
       <div className="formstep2__header">
@@ -13,11 +15,16 @@ export default function PaymentOpPay1({ seatvalue }) {
         <div className="top">
           <div className="top__titlewrap">Payment Options</div>
           <div className="top__progresswrap">placeholder1-progressbar</div>
-          <div className="top__paymentmeans">placeholder2-progressbar</div>
+          <div className="top__paymentmeans">
+            placeholder2-three radio buttons
+          </div>
         </div>
 
         <div className="bottom">
-          <ComfirmPayment text="start" buttonclass="comfirmpaymentbutton" />
+          <ComfirmPayment
+            text={buttontext}
+            buttonclass="comfirmpaymentbutton"
+          />
         </div>
       </div>
 
