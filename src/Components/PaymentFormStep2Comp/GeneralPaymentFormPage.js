@@ -1,6 +1,6 @@
 import "./GeneralPaymentFormPageStyles.scss";
 import Footer from "../Footer/Footer";
-import MethodPayButton from "../PayWithButton/PayWithButton";
+import PayWithButton from "../PayWithButton/PayWithButton";
 import ComfirmPayment from "../GeneralButton/GeneralButton";
 
 export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
@@ -21,9 +21,9 @@ export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
             For Uni Suchi - Seat {seatvalue}
           </div>
           <div className="middle">
-            <MethodPayButton method="Debit or Credit" text="some" s />
-            <MethodPayButton method="Zelle" text="somehum" />
-            <MethodPayButton method="Apple Pay" text="somehumbum" />
+            <PayWithButton method="Debit or Credit" text="some" s />
+            <PayWithButton method="Zelle" text="somehum" />
+            <PayWithButton method="Apple Pay" text="somehumbum" />
           </div>
         </div>
 

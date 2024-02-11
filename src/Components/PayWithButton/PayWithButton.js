@@ -5,6 +5,8 @@ import Popup from "reactjs-popup";
 import zelleLogo from "../../assets/images/zellelogocropped.png";
 import applePayLogo from "../../assets/images/applepaylogo-white.png";
 
+import Aaa from "../PayPopUpMessage/PayPopUpMessageComp";
+
 export default function PayWithButton({ method, text, classplaceholder }) {
   const [statusLight, setStatusLight] = useState(<div></div>);
   const [validation, setValidation] = useState(false);
@@ -28,13 +30,12 @@ export default function PayWithButton({ method, text, classplaceholder }) {
       trigger={
         <button className="paywithbuttomcomp">
           <div className="child1">Pay with</div>
-          <div className="child2">sdfsfsdf</div>
+          <div className="child2">{som}</div>
           {statusLight}
         </button>
       }
     >
-      <div>Popup content here !!</div>
-      <div>{text}</div>
+      <Aaa />
     </Popup>
   );
 }
