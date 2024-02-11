@@ -1,8 +1,4 @@
-@import "../../styles/partials/mixins";
-@import "../../styles/partials/variables";
-@import "../../styles/partials/fonts";
-
-.paybutton{
+.finalcomfirmbutton{
     padding: 0rem;
     width: 361px;
     // width: 100%;
@@ -10,8 +6,8 @@
     aspect-ratio: 1/0.105263;
     border: none;
     border-radius: 15px;
-    background-color: $buttonsplash;
-    color: $buttontext;
+    background-color: black;
+    color: white;
     text-transform: capitalize;
     font-size: 18px;
 

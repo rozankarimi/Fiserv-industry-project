@@ -3,6 +3,8 @@ import DropDownOrder from "../../Components/DropDownOrder/DropDownOrder";
 import PaymentMethodButton from "../../Components/PaymentMethodButton/PaymentMethodButton";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import OrderSummary from "../../Components/OrderSummary/OrderSummary";
+import Gratuity from "../../Components/Gratuity/Gratuity";
 const HomePage = () => {
   const [customers, setCustomers] = useState([]);
   const [reviewOrders, setReviewOrders] = useState([]);
@@ -50,6 +52,8 @@ const HomePage = () => {
       <>
         <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
         <PaymentMethodButton />
+        <OrderSummary />
+        <Gratuity />
       </>
     );
   }

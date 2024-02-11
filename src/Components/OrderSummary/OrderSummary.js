@@ -4,30 +4,31 @@ import React from "react";
 function OrderSummary() {
   return (
     <>
+      <h3 className="header">Table Summary</h3>
       <div className="hero">
-        <h3>ORDER SUMMARY</h3>
-        <p>Subtotal</p>
-        <p>NYC Tax(8.875%)</p>
-        <p>
-          Gratuity(18%)
-          <a href="/" className="link">
-            Change
-          </a>
-        </p>
+        <div className="hero__price">
+          <p>Subtotal</p>
+          <p>$153.50</p>
+        </div>
+        <div className="hero__price">
+          <p>NYC Tax(8.875%)</p>
+          <p>$13.62</p>
+        </div>
+        <div className="hero__price">
+          <p>
+            Gratuity(18%)
+            <a href="/" className="link">
+              Update
+            </a>
+          </p>
+          <p>$30.08</p>
+        </div>
       </div>
       <div className="total">
-        <h3>Order Total</h3>
-      </div>
-      <div>
-        <label htmlFor="accept">
-          <input
-            type="checkbox"
-            id="accept"
-            name="accept"
-            className="checkbox"
-          />
-          Apply Coupon or gift card
-        </label>
+        <div className="hero__price">
+          <h4>Order Total</h4>
+          <p>$197.20</p>
+        </div>
       </div>
     </>
   );
