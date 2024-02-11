@@ -2,21 +2,17 @@ import "./_OrderSummary.scss";
 import React from "react";
 import { useState, useEffect } from "react";
 
-function OrderSummary({ loadgratuity, setloadgratuity, reviewOrders }) {
+function OrderSummary({
+  loadgratuity,
+  setloadgratuity,
+  reviewOrders,
+  customGratuity,
+  gratuityTotal,
+  subTotal,
+  taxTotal,
+  orderTotal,
+}) {
   console.log(reviewOrders);
-  const [subTotal, setSubTotal] = useState(0);
-
-  const getSubtotal = () => {
-    let totalPrice = 0;
-    reviewOrders.forEach((item) => {
-      totalPrice = totalPrice + item.item_total;
-    });
-    setSubTotal(totalPrice);
-  };
-
-  useEffect(() => {
-    getSubtotal();
-  }, []);
 
   return (
     <>
@@ -24,26 +20,26 @@ function OrderSummary({ loadgratuity, setloadgratuity, reviewOrders }) {
       <div className="hero">
         <div className="hero__price">
           <p>Subtotal</p>
-          <p>${subTotal}</p>
+          <p>${subTotal.toFixed(2)}</p>
         </div>
         <div className="hero__price">
           <p>NYC Tax(8.875%)</p>
-          <p>$13.62</p>
+          <p>${taxTotal.toFixed(2)}</p>
         </div>
         <div className="hero__price">
           <p>
-            Gratuity(18%)
+            Gratuity({customGratuity})
             <span onClick={() => setloadgratuity(true)} className="link">
               Update
             </span>
           </p>
-          <p>$30.08</p>
+          <p>${gratuityTotal.toFixed(2)}</p>
         </div>
       </div>
       <div className="total">
         <div className="hero__price">
           <h4>Order Total</h4>
-          <p>$197.20</p>
+          <p>${orderTotal.toFixed(2)}</p>
         </div>
       </div>
     </>

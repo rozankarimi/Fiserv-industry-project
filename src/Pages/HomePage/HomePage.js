@@ -10,6 +10,11 @@ const HomePage = () => {
   const [reviewOrders, setReviewOrders] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [loadgratuity, setloadgratuity] = useState(false);
+  const [customGratuity, setCustomGratuity] = useState(0);
+  const [gratuityTotal, setGratuityTotal] = useState(0);
+  const [subTotal, setSubTotal] = useState(0);
+  const [taxTotal, setTaxTotal] = useState(8.875);
+  const [orderTotal, setOrderTotal] = useState(0);
 
   const getCustomer = () => {
     axios
@@ -29,6 +34,10 @@ const HomePage = () => {
         setReviewOrders(response.data);
       })
       .then(() => {
+        getSubtotal();
+        gettaxTotal();
+      })
+      .then(() => {
         setTimeout(() => {
           setHasLoaded(true);
         }, 1500);
@@ -36,6 +45,35 @@ const HomePage = () => {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  function changeGratuity(event) {
+    setCustomGratuity(event.target.innerText);
+    getgratuityTotal();
+  }
+  const getSubtotal = () => {
+    let totalPrice = 0;
+    reviewOrders.forEach((item) => {
+      totalPrice = totalPrice + item.item_total;
+    });
+    setSubTotal(totalPrice);
+  };
+  const gettaxTotal = () => {
+    let totaltax = 0;
+    totaltax = (subTotal * 8.875) / 100;
+    setTaxTotal(totaltax);
+    getordertotal();
+  };
+
+  const getgratuityTotal = () => {
+    let totalgratuity = 0;
+    totalgratuity = (subTotal * customGratuity.replace("%", " ")) / 100;
+    setGratuityTotal(totalgratuity);
+    getordertotal();
+  };
+  const getordertotal = () => {
+    let orderTotalPrice = subTotal + taxTotal + gratuityTotal;
+    setOrderTotal(orderTotalPrice);
   };
 
   useEffect(() => {
@@ -52,8 +90,18 @@ const HomePage = () => {
           loadgratuity={loadgratuity}
           setloadgratuity={setloadgratuity}
           reviewOrders={reviewOrders}
+          customGratuity={customGratuity}
+          subTotal={subTotal}
+          taxTotal={taxTotal}
+          gratuityTotal={gratuityTotal}
+          orderTotal={orderTotal}
         />
-        {loadgratuity === true ? <Gratuity /> : null}
+        {loadgratuity === true ? (
+          <Gratuity
+            customGratuity={customGratuity}
+            changeGratuity={changeGratuity}
+          />
+        ) : null}
       </>
     );
   }
