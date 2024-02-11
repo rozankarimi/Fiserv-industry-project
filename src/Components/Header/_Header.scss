@@ -2,38 +2,32 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
-.App{
-    &--header{
-        background-image: url(../../assets/images/tamas-pap-zali_zGDWo8-unsplash.jpg);
-        background-size:cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius:0 0 15% 15%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        
+.App {
+  &--header {
+    background-image: url(../../assets/images/tamas-pap-zali_zGDWo8-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0 0 15% 15%;
+    margin: 0px;
+    padding:0px;
 
-        &__text{
-            position: relative;
-            width: 70%;
-            top: 10px;
-            left: 50px;
-            text-align: center;
-            color: $buttontext;
-            
-        }
-        &__Subtext{
-            width: 266px;
-            padding:0 10px;
-            position: relative;
-            border-radius: 8px;
-            bottom: 10px;
-            left: 70px;
-            background-color: $boxBG;
-            
-        }
+    &__text {
+      position: relative;
+      width: 70%;
+      top: 10px;
+      left: 50px;
+      text-align: center;
+      color: $buttontext;
     }
+    &__Subtext {
+      width: 266px;
+      padding: 0 10px;
+      position: relative;
+      border-radius: 8px;
+      bottom: 10px;
+      left: 70px;
+      background-color: $boxBG;
+    }
+  }
 }
-

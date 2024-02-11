@@ -12,9 +12,6 @@ class Header extends Component {
             <p>(212)- 000- 0000</p>
           </div>
         </div>
-        <button type="text" className="App--SubHeader__Button">
-          Request your server, Jack
-        </button>
       </div>
     );
   }

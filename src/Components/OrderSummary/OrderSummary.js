@@ -1,5 +1,23 @@
 import "./_OrderSummary.scss";
 import React from "react";
+import { useState, useEffect } from "react";
+
+function OrderSummary(props) {
+  console.log(props.reviewOrders);
+  const [subTotal, setSubTotal] = useState(0);
+
+  const getSubtotal = () => {
+    let totalPrice = 0;
+    props.reviewOrders.forEach((item) => {
+      totalPrice = totalPrice + item.item_total;
+    });
+    setSubTotal(totalPrice);
+  };
+
+  useEffect(() => {
+    getSubtotal();
+  }, []);
+
 
 function OrderSummary({ loadgratuity, setloadgratuity }) {
   return (
@@ -8,7 +26,7 @@ function OrderSummary({ loadgratuity, setloadgratuity }) {
       <div className="hero">
         <div className="hero__price">
           <p>Subtotal</p>
-          <p>$153.50</p>
+          <p>${subTotal}</p>
         </div>
         <div className="hero__price">
           <p>NYC Tax(8.875%)</p>

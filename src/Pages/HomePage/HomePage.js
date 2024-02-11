@@ -19,10 +19,10 @@ const HomePage = () => {
       <>
         <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
         <PaymentMethodButton />
-        <DropDownOrder />
         <OrderSummary
           loadgratuity={loadgratuity}
-          setloadgratuity={setloadgratuity}
+          setloadgratuity={setloadgratuity} 
+          reviewOrders={reviewOrders}
         />
         {loadgratuity === true ? <Gratuity /> : null}
       </>
