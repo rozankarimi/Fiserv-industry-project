@@ -14,16 +14,19 @@ export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
       </div>
       <div className="formstep2__body">
         <div className="top">
-          <div className="titlewrap">Pay by {payMethod}</div>
-          <div className="progresswrap">placeholder1-progressbar</div>
-          <div className="pricewrap">${price}</div>
-          <div className="messagewrap">For Uni Suchi - Seat {seatvalue}</div>
+          <div className="top__titlewrap">Pay by {payMethod}</div>
+          <div className="top__progresswrap">placeholder1-progressbar</div>
+          <div className="top__pricewrap">${price}</div>
+          <div className="top__messagewrap">
+            For Uni Suchi - Seat {seatvalue}
+          </div>
+          <div className="middle">
+            <MethodPayButton method="Debit or Credit" text="some" s />
+            <MethodPayButton method="Zelle" text="somehum" />
+            <MethodPayButton method="Apple Pay" text="somehumbum" />
+          </div>
         </div>
-        <div className="middle">
-          <MethodPayButton method="Debit or Credit" text="some" s />
-          <MethodPayButton method="Zelle" text="somehum" />
-          <MethodPayButton method="Apple Pay" text="somehumbum" />
-        </div>
+
         <div className="bottom">
           <ComfirmPayment
             text="Confirm Payment"
