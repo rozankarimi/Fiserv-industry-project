@@ -2,9 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
-import LandingPage from "./Pages/LandingPage/LandingPage";  
+import LandingPage from "./Pages/LandingPage/LandingPage";
 import PaymentSuccessPage from "./Pages/PaymentSuccessPage/PaymentSuccessPage";
-import Some from "./Components/PaymentFormStep2Comp/GeneralPaymentFormPage";
 
 function App() {
   return (
