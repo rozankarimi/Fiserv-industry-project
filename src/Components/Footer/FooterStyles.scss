@@ -1,0 +1,14 @@
+.footer{
+    display: flex;
+    width: 100%;
+    // height: 100%;
+    justify-content: center;
+    // need to specify
+    // background-color: grey;
+    &__innnerwrapper{
+        display: flex;
+        // border: 2px solid black;
+        gap: 8px;
+    }
+}
+
