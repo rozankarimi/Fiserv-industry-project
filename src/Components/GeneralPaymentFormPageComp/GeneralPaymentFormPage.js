@@ -1,4 +1,4 @@
-import "./GeneralPaymentOpPayPageStyles.scss";
+import "./GeneralPaymentFormPageStyles.scss";
 
 export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
   return (
