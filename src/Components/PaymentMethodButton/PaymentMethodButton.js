@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./PaymentMethodButton.scss";
-import appleLogo from "../../assets/images/apple pay.svg";
+import appleLogo from "../../assets/images/applepaylogo-black.svg";
 const PaymentMethodButton = () => {
   const [selectCreditCard, setSelectCreditCard] = useState(true);
   const [selectApplePay, setSelectApplePay] = useState(false);

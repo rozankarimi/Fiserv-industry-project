@@ -1,6 +1,7 @@
 import "./GeneralPaymentFormPageStyles.scss";
 import Footer from "../Footer/Footer";
 import MethodPayButton from "../PayWithButton/PayWithButton";
+import ComfirmPayment from "../GeneralButton/GeneralButton";
 
 export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
   return (
@@ -14,10 +15,13 @@ export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
       </div>
       <div className="middlecomp">placeholder2-mainbody comp</div>
       <div className="bottom">
-        <MethodPayButton text="one" />
-        <MethodPayButton text="two" />
-        <MethodPayButton text="three" />
-        <MethodPayButton text="four" />
+        <MethodPayButton method="Debit or Credit" text="some" s />
+        <MethodPayButton method="Zelle" text="somehum" />
+        <MethodPayButton method="Apple Pay" text="somehumbum" />
+        <ComfirmPayment
+          text="Confirm Payment"
+          buttonclass="comfirmpaymentbutton"
+        />
       </div>
       <Footer />
     </>
