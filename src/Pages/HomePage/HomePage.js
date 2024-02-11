@@ -2,6 +2,8 @@ import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 import DropDownOrder from "../../Components/DropDownOrder/DropDownOrder";
 import PaymentMethodButton from "../../Components/PaymentMethodButton/PaymentMethodButton";
 import { useState } from "react";
+import OrderSummary from "../../Components/OrderSummary/OrderSummary";
+import Gratuity from "../../Components/Gratuity/Gratuity";
 const HomePage = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
 
@@ -13,6 +15,8 @@ const HomePage = () => {
       <>
         <PaymentMethodButton />
         <DropDownOrder />
+        <OrderSummary />
+        <Gratuity />
       </>
     );
   }

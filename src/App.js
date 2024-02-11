@@ -2,7 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import Header from "./Components/Header/Header";
 import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
-import Pay1 from "./Pages/GeneralPaymentOpPayPage/GeneralPaymentOpPayPage";
+import PaymentSuccessPage from "./Pages/PaymentSuccessPage/PaymentSuccessPage";
+
 function App() {
   return (
     <div className="App">
@@ -11,10 +12,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/paymentPage" element={<PaymentPage />} />
+          <Route path="/paymentSuccessPage" element={<PaymentSuccessPage />} />
         </Routes>
       </BrowserRouter> */}
-
-      <Pay1 />
     </div>
   );
 }
