@@ -4,6 +4,7 @@ import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import LandingPage from "./Pages/LandingPage/LandingPage";  
 import PaymentSuccessPage from "./Pages/PaymentSuccessPage/PaymentSuccessPage";
+import Some from "./Components/PaymentFormStep2Comp/GeneralPaymentFormPage";
 
 function App() {
   return (
