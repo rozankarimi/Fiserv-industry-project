@@ -11,9 +11,38 @@ const HomePage = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [loadgratuity, setloadgratuity] = useState(false);
 
-  setTimeout(() => {
-    setHasLoaded(true);
-  }, 3000);
+  const getCustomer = () => {
+    axios
+      .get("http://localhost:8080/customers")
+      .then((response) => {
+        setCustomers(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const getReviewOrders = () => {
+    axios
+      .get("http://localhost:8080/review")
+      .then((response) => {
+        setReviewOrders(response.data);
+      })
+      .then(() => {
+        setTimeout(() => {
+          setHasLoaded(true);
+        }, 1500);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getCustomer();
+    getReviewOrders();
+  }, []);
+
   if (hasLoaded) {
     return (
       <>
@@ -21,7 +50,7 @@ const HomePage = () => {
         <PaymentMethodButton />
         <OrderSummary
           loadgratuity={loadgratuity}
-          setloadgratuity={setloadgratuity} 
+          setloadgratuity={setloadgratuity}
           reviewOrders={reviewOrders}
         />
         {loadgratuity === true ? <Gratuity /> : null}
