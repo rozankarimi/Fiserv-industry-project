@@ -18,6 +18,8 @@ function OrderSummary(props) {
     getSubtotal();
   }, []);
 
+
+function OrderSummary({ loadgratuity, setloadgratuity }) {
   return (
     <>
       <h3 className="header">Table Summary</h3>
@@ -33,9 +35,9 @@ function OrderSummary(props) {
         <div className="hero__price">
           <p>
             Gratuity(18%)
-            <a href="/" className="link">
+            <span onClick={() => setloadgratuity(true)} className="link">
               Update
-            </a>
+            </span>
           </p>
           <p>$30.08</p>
         </div>

@@ -9,51 +9,22 @@ const HomePage = () => {
   const [customers, setCustomers] = useState([]);
   const [reviewOrders, setReviewOrders] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [loadgratuity, setloadgratuity] = useState(false);
 
-  const handleSplit = () => {};
-  const sortOrders = () => {
-    // const sortArray = arraySort(orders, "ordering_party");
-  };
-
-  const getCustomer = () => {
-    axios
-      .get("http://localhost:8080/customers")
-      .then((response) => {
-        setCustomers(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const getReviewOrders = () => {
-    axios
-      .get("http://localhost:8080/review")
-      .then((response) => {
-        setReviewOrders(response.data);
-      })
-      .then(() => {
-        setTimeout(() => {
-          setHasLoaded(true);
-        }, 1500);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  useEffect(() => {
-    getCustomer();
-    getReviewOrders();
-  }, []);
-
+  setTimeout(() => {
+    setHasLoaded(true);
+  }, 3000);
   if (hasLoaded) {
     return (
       <>
         <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
         <PaymentMethodButton />
-        <OrderSummary reviewOrders={reviewOrders} />
-        <Gratuity />
+        <OrderSummary
+          loadgratuity={loadgratuity}
+          setloadgratuity={setloadgratuity} 
+          reviewOrders={reviewOrders}
+        />
+        {loadgratuity === true ? <Gratuity /> : null}
       </>
     );
   }
