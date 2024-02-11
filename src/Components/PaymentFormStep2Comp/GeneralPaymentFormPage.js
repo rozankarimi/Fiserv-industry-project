@@ -7,6 +7,7 @@ export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
   payMethod = "Seat";
   price = 39.82;
   seatvalue = 1;
+
   return (
     <div className="formstep2">
       <div className="formstep2__header">
@@ -21,7 +22,7 @@ export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
             For Uni Suchi - Seat {seatvalue}
           </div>
           <div className="middle">
-            <PayWithButton method="Debit or Credit" text="some" s />
+            <PayWithButton method="Debit or Credit" text="some" />
             <PayWithButton method="Zelle" text="somehum" />
             <PayWithButton method="Apple Pay" text="somehumbum" />
           </div>
