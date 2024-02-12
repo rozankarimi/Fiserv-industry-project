@@ -13,7 +13,6 @@ function App() {
     <div className="App">
       <img className="statasbar" src={statusBarLight} />
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/orderSummary" element={<HomePage />} />

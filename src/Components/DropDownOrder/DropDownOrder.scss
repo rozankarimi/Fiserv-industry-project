@@ -1,6 +1,7 @@
 @import "../../styles/partials/_mixins.scss";
 @import "../../styles/partials/_variables.scss";
 // @import "../../styles/partials/_mixins.scss";
+
 .review-orders {
   margin-top: 16px;
   margin-bottom: 19px;
@@ -13,7 +14,6 @@
     text-align: center;
     text-align: left;
     text-transform: capitalize;
-    padding: 0px 16px;
   }
   &__title {
     font-weight: 700;
