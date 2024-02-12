@@ -4,7 +4,7 @@ import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import PaymentSuccessPage from "./Pages/PaymentSuccessPage/PaymentSuccessPage";
-
+import Ham from "./Components/PaymentOptions/PaymentOptions";
 function App() {
   return (
     <div className="App">
