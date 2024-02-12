@@ -2,40 +2,51 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/fonts";
 
-.tipAmount{
-    display: flex;
-    justify-content: space-evenly;
-    &__default{
-        border: 2px solid $buttonsplash;
-        border-radius: 4px;
-        padding: 0 5px;
-        height: 50px;
-        
-        &--top{
-            position: relative;
-            bottom: 40px;
-        }
-        &--buttom{
-            position: absolute;
-            top: 1572px;
-        }
+.tipAmount {
+  display: flex;
+  justify-content: space-evenly;
+  &__default {
+    border: 2px solid $buttonsplash;
+    border-radius: 4px;
+    padding: 0 5px;
+    height: 50px;
+
+    &--top {
+      position: relative;
+      bottom: 40px;
     }
+    &--buttom {
+      position: absolute;
+      top: 1572px;
+    }
+  }
 }
-.popup_update{
-    text-align: center;
-    padding-bottom: 70px;
+.popup_update {
+  text-align: center;
+  padding-bottom: 70px;
 }
-.button{
-    
-    background-color: $buttonColor;
-    color: $buttontext;
-    text-align: center;
-    padding: 10px;
-    border-radius: 15px;
-    width: 361px;
-    
+.button {
+  background-color: $buttonColor;
+  color: $buttontext;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+  width: 361px;
 }
-.buttonBox{
-    padding-top: 70px;
-    text-align: center;
+.buttonBox {
+  padding-top: 70px;
+  text-align: center;
+}
+.pop-up {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 20;
+  background-color: red;
+  .pop-up-container {
+    display: flex;
+  }
+}
+.display-none {
+  display: none;
 }

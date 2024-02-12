@@ -95,13 +95,12 @@ const HomePage = () => {
 
   useEffect(() => {
     getGratuityTotal();
-    getOrdertotal()
+    getOrdertotal();
   }, [customGratuity]);
   if (hasLoaded) {
     return (
       <>
         <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
-        <PaymentMethodButton />
         <OrderSummary
           loadgratuity={loadgratuity}
           setloadgratuity={setloadgratuity}
@@ -115,6 +114,7 @@ const HomePage = () => {
           <Gratuity
             customGratuity={customGratuity}
             changeGratuity={changeGratuity}
+            gratuityTotal={gratuityTotal}
           />
         ) : null}
       </>
