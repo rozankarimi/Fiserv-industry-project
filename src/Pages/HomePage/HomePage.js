@@ -95,7 +95,7 @@ const HomePage = () => {
   useEffect(() => {
     getGratuityTotal();
     getOrdertotal();
-  }, [customGratuity]);
+  }, [customGratuity, subTotal, taxTotal, gratuityTotal]);
   if (hasLoaded) {
     return (
       <>
