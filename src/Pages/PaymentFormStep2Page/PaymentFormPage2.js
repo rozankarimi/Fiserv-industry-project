@@ -26,7 +26,7 @@ export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
           </div>
           <div className="toppage2__pricewrap">${price}</div>
           <div className="toppage2__messagewrap">
-            For Uni Suchi - Seat {seatvalue}
+            For Uni Sushi - Seat {seatvalue}
           </div>
           <div className="middlepage2">
             <PayWithButton method="Debit or Credit" text="some" />

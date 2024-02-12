@@ -1,5 +1,6 @@
 import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Header from "./Components/Header/Header";
 import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <img className="statasbar" src={statusBarLight} />
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/orderSummary" element={<HomePage />} />
@@ -28,8 +29,7 @@ function App() {
           />
           <Route path="/paymentSuccessPage" element={<PaymentSuccessPage />} />
         </Routes>
-      </BrowserRouter> */}
-      <PaymentFormStep2Page />
+      </BrowserRouter>
     </div>
   );
 }
