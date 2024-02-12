@@ -1,0 +1,24 @@
+.finalcomfirmbutton, .comfirmpaymentbutton, .popupcomfirmbutton{
+    padding: 0rem;
+    width: 361px;
+    // width: 100%;
+    height: 46px;
+    // how should width of button be controlled/styled, but the child of parent...
+    aspect-ratio: 1/0.105263;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(72, 50,202);
+    color: white;
+    text-transform: capitalize;
+    font-size: 22px;
+
+    // effects and animations
+    
+    &:hover{
+        background-color: rgb(75, 75, 75);
+    }
+
+    &:active{
+        background-color: rgb(39, 39, 39);
+    }
+}

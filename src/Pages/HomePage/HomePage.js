@@ -7,8 +7,9 @@ import axios from "axios";
 import OrderSummary from "../../Components/OrderSummary/OrderSummary";
 import Gratuity from "../../Components/Gratuity/Gratuity";
 import Header from "../../Components/Header/Header";
+import { useNavigate } from "react-router-dom";
 
-const HomePage = () => {
+export default function HomePage() {
   const [customers, setCustomers] = useState([]);
   const [reviewOrders, setReviewOrders] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -19,22 +20,12 @@ const HomePage = () => {
   const [taxTotal, setTaxTotal] = useState(8.875);
   const [orderTotal, setOrderTotal] = useState(0);
 
+  const navigate = useNavigate();
+
   function changeGratuity(event) {
     const eventValue = event.target.innerText;
     setCustomGratuity(eventValue);
   }
-  // const getSubtotal = () => {
-  //   let totalPrice = 0;
-  //   reviewOrders.forEach((item) => {
-  //     totalPrice = totalPrice + item.item_total;
-  //   });
-  //   setSubTotal(totalPrice);
-  // };
-  // const getTaxTotal = () => {
-  //   let totaltax = 0;
-  //   totaltax = (subTotal * 8.875) / 100;
-  //   setTaxTotal(totaltax);
-  // };
 
   const getGratuityTotal = () => {
     let totalgratuity = 0;
@@ -100,6 +91,8 @@ const HomePage = () => {
     getGratuityTotal();
     getOrdertotal();
   }, [customGratuity, subTotal, taxTotal, gratuityTotal]);
+
+  function homePageButtonHandler() {}
   if (hasLoaded) {
     return (
       <main className="homepagewrapper">
@@ -122,7 +115,11 @@ const HomePage = () => {
               gratuityTotal={gratuityTotal}
             />
           ) : null}
-          <button type="text" className="buttonBoxwrapper">
+          <button
+            type="text"
+            className="buttonBoxwrapper"
+            onClick={() => navigate("/selectpaymentoptions")}
+          >
             Continue to Payment Options
           </button>
         </section>
@@ -133,5 +130,4 @@ const HomePage = () => {
   if (!hasLoaded) {
     return <LoadingPage />;
   }
-};
-export default HomePage;
+}
