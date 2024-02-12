@@ -73,7 +73,7 @@ const DropDownOrder = (props) => {
                   );
                 })}
                 <p className="total-price">
-                  *Include Taxes and Fees
+                  *Taxes and Fees Not Included
                   <span className="total-price__price"> ${totalPrice}</span>
                 </p>
               </section>
