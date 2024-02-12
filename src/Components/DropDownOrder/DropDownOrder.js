@@ -1,6 +1,6 @@
 import "./DropDownOrder.scss";
 import { useEffect, useState } from "react";
-// import arraySort from "array-sort";
+import arraySort from "array-sort";
 import { v4 as uuidv4 } from "uuid";
 
 const DropDownOrder = (props) => {

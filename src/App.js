@@ -8,7 +8,7 @@ import Ham from "./Components/PaymentOptions/PaymentOptions";
 function App() {
   return (
     <div className="App">
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -16,8 +16,7 @@ function App() {
           <Route path="/paymentPage" element={<PaymentPage />} />
           <Route path="/paymentSuccessPage" element={<PaymentSuccessPage />} />
         </Routes>
-      </BrowserRouter> */}
-      <Ham />
+      </BrowserRouter>
     </div>
   );
 }
