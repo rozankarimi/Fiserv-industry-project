@@ -113,6 +113,7 @@ const HomePage = () => {
           <Gratuity
             customGratuity={customGratuity}
             changeGratuity={changeGratuity}
+            gratuityTotal={gratuityTotal}
           />
         ) : null}
       </>
