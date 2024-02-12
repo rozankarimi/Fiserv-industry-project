@@ -1,6 +1,6 @@
 import "./DropDownOrder.scss";
 import { useEffect, useState } from "react";
-import arraySort from "array-sort";
+// import arraySort from "array-sort";
 import { v4 as uuidv4 } from "uuid";
 
 const DropDownOrder = (props) => {
@@ -73,8 +73,8 @@ const DropDownOrder = (props) => {
                   );
                 })}
                 <p className="total-price">
-                  *Include Taxes and Fees 
-                  <span className="total-price__price">  ${totalPrice}</span>
+                  *Include Taxes and Fees
+                  <span className="total-price__price"> ${totalPrice}</span>
                 </p>
               </section>
             );
