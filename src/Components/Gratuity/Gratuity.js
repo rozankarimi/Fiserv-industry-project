@@ -28,7 +28,7 @@ function Gratuity({ customGratuity, changeGratuity, gratuityTotal }) {
           15%
         </p>
         <div className="tipAmount__default">
-          {/* <p className="tipAmount__default--top">$30.08</p> */}
+          <p className="tipAmount__default--top">${gratuityTotal.toFixed(2)}</p>
           <p
             onClick={(event) => {
               event.preventDefault();
@@ -58,7 +58,7 @@ function Gratuity({ customGratuity, changeGratuity, gratuityTotal }) {
               setPopUpClass("");
             }}
           >
-            Confirm 18% ($ {gratuityTotal.toFixed()})
+            Confirm {customGratuity} ($ {gratuityTotal.toFixed(2)})
           </button>
         </div>
       </Link>
