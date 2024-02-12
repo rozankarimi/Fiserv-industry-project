@@ -1,0 +1,10 @@
+.App{
+    // background-color: rgb(235, 235, 235);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.statasbar{
+    position: fixed;
+    z-index: 1000;
+}

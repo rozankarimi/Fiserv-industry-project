@@ -1,0 +1,62 @@
+.loading-page {
+  background-image: url("https://s3-alpha-sig.figma.com/img/4a2b/c8c8/582e277b47de225a4896791a1f69920b?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=axU1Xibx4jNBLWTVA3Zptq3E9Rn2chBdnVRviRsGOMftzWf8kDsmkXJ37DTYePOlBA19w8w1EK6KKJw~RRkmGMmx524ZSo7aLbCsAjvzEihifPqCEU7ETg9O7nwldKXUwdY7my232ztZVrcoIClCOhRf71dgFoc5u9dOMikdnZEzvEbjyu004kWvf1Pzxyad6iGgfAqySwpWvn3m55Ahf04mXAYBZdqE-2cAXehlZ2FgeBIMAz38lYA1879xgnfm9wfUuoaYS6TzCPGqDlEvO-~GFyv0pBfJY6RpqYol2JfJ17pKOw5iIDJZ2GjKrvmWT7enbmHCuJ7eaXrgON65Tw__");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+  &__loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 20px;
+    &--loader {
+      border: 3px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 3px solid #3498db;
+      width: 55px;
+      height: 55px;
+      margin: auto;
+      -webkit-animation: spin 2s linear infinite; /* Safari */
+      animation: spin 2s linear infinite;
+    }
+    &--text {
+      color: #fff;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  // OVER LAY
+  &__shade {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}

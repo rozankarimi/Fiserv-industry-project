@@ -1,0 +1,63 @@
+.formstep2{
+    display: flex;
+    height: 852px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    position: relative;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    
+    &__header{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        box-sizing: border-box;
+    }
+
+    &__body{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+.middle, .bottompage1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toppage1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    &__titlewrap{
+        margin-bottom: 4rem;
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    &__progresswrap{
+        margin-bottom: 7rem;
+        width: 100%;
+    }
+
+    &__paymentoptions{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+.headerbuttonwrap{
+    width: 200px;
+    }

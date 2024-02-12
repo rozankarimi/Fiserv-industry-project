@@ -1,0 +1,18 @@
+.statusContainer{
+    display:flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &__line{
+        border: 1px solid black; /* You can adjust the style of the line as needed */
+        width: 30px; /* Adjust the width as needed */
+        margin: 5px 0;        
+    }
+    &--confirmtext, &--paymenttext, &--checkouttext{
+        padding-left: 2px;
+        font-size: 9px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}

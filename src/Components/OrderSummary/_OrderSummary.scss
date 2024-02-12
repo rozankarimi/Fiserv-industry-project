@@ -1,0 +1,26 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+.hero{
+    margin: 16px;
+    color: $textColorLight;
+    &__price{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+}
+.header{
+    margin: 16px;
+}
+.total{
+    margin: 16px;
+}
+.link{
+    text-decoration: none;
+    padding-left: 15px;
+    color: $link;
+    cursor: pointer;
+}

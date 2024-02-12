@@ -1,0 +1,26 @@
+.scan-button-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://s3-alpha-sig.figma.com/img/4a2b/c8c8/582e277b47de225a4896791a1f69920b?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=axU1Xibx4jNBLWTVA3Zptq3E9Rn2chBdnVRviRsGOMftzWf8kDsmkXJ37DTYePOlBA19w8w1EK6KKJw~RRkmGMmx524ZSo7aLbCsAjvzEihifPqCEU7ETg9O7nwldKXUwdY7my232ztZVrcoIClCOhRf71dgFoc5u9dOMikdnZEzvEbjyu004kWvf1Pzxyad6iGgfAqySwpWvn3m55Ahf04mXAYBZdqE-2cAXehlZ2FgeBIMAz38lYA1879xgnfm9wfUuoaYS6TzCPGqDlEvO-~GFyv0pBfJY6RpqYol2JfJ17pKOw5iIDJZ2GjKrvmWT7enbmHCuJ7eaXrgON65Tw__");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__button {
+    width: 150px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #000;
+    outline-width: 0px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  &__button:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    border-color: #fff;
+  }
+}

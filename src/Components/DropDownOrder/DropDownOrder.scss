@@ -1,0 +1,104 @@
+@import "../../styles/partials/_mixins.scss";
+@import "../../styles/partials/_variables.scss";
+// @import "../../styles/partials/_mixins.scss";
+
+.review-orders {
+  margin-top: 16px;
+  margin-bottom: 19px;
+  border-radius:20px 20px 0px 0px;
+  box-shadow: 0px -1px 0px lightgray;
+  &__header {
+    // HEADER
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    text-align: left;
+    text-transform: capitalize;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0px;
+  }
+  &__guests {
+    display: flex;
+    font-size: 18px;
+    margin: 0px;
+  }
+}
+
+.seats {
+  padding: 0px 16px;
+  overflow: hidden;
+  margin: 0px;
+
+  // SEAT NUMBER
+  &__number {
+    text-align: left;
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+
+  // SINGLE SEAT ITEM
+  &__item {
+    border-radius: 6px;
+    margin-bottom: 16px; // FOOD INFO
+    .food-item-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+
+      &__image {
+        height: 50px;
+        width: 50px;
+        border-radius: 6px;
+        object-fit: cover;
+      }
+      &__name-quantity {
+        padding: 0px 12px;
+        margin: 0px;
+        text-align: left;
+        width: 100%;
+        &--name {
+          font-weight: 400;
+          padding: 0px;
+          margin: 0px;
+          font-size: 14px;
+        }
+        &--quantity {
+          font-weight: 400;
+          padding: 0px;
+          margin: 0px;
+          font-size: 14px;
+        }
+      }
+      &__price {
+        padding: 0px;
+        margin: 0px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+      font-weight: 400;
+    }
+    .total-price {
+      font-style: italic;
+      text-align: right;
+      margin: 0px;
+      &__price {
+        font-weight: 700;
+        font-style: normal;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+// JS DYNAMIC CLASS
+.seats-show {
+  display: block;
+}
+.display-none {
+  display: none;
+}
