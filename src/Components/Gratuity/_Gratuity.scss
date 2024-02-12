@@ -2,6 +2,7 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/fonts";
 
+
 .tipAmount {
   display: flex;
   justify-content: space-evenly;
@@ -24,6 +25,7 @@
 .popup_update {
   text-align: center;
   padding-bottom: 70px;
+
 }
 .button {
   background-color: $buttonColor;
