@@ -23,6 +23,7 @@ export default function PayOptions({ amountofguest }) {
         <label class="container">
           Evenly Split Payment by {amountofguest}
           <input
+            checked="checked"
             type="radio"
             name="radio"
             value="even split"
@@ -34,7 +35,6 @@ export default function PayOptions({ amountofguest }) {
           Pay by Seat
           <input
             type="radio"
-            checked="checked"
             name="radio"
             value="pay seat"
             onChange={(e) => setSelection(e.target.value)}

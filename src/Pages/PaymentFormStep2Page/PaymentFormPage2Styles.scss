@@ -9,14 +9,13 @@
     // align-items: center;
     position: relative;
     padding-top: 4rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     
     &__header{
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        padding-left: 1rem;
         box-sizing: border-box;
     }
 
@@ -31,14 +30,14 @@
     }
 }
 
-.top, .middle, .bottom{
+.toppage2, .middlepage2, .bottomtoppage2{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-.top{
+.toppage2{
     flex-grow: 1;
     &__titlewrap{
         font-size: 22px;
@@ -50,12 +49,16 @@
         font-weight: 500;
     }
 
+&__progresswrap{
+    width: 100%;
+}
+
     &__pricewrap{
         font-size: 48px;
         font-weight:500;
     }
 }
-.middle{
+.middlepage2{
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -64,3 +67,7 @@
     gap: 0.5rem
 
 }
+
+.headerbuttonwrap{
+    width: 200px;
+    }

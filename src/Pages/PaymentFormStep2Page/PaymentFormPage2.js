@@ -2,6 +2,8 @@ import "./PaymentFormPage2Styles.scss";
 import Footer from "../../Components/Footer/Footer";
 import PayWithButton from "../../Components/PayWithButton/PayWithButton";
 import ComfirmPayment from "../../Components/GeneralButton/GeneralButton";
+import FormPageTracker from "../../Components/FormPageTracker/FormPageTracker";
+import DynamicGoBack from "../../Components/DynamicGoBack/DynamicGoBack";
 
 export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
   payMethod = "Seat";
@@ -11,24 +13,29 @@ export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
   return (
     <div className="formstep2">
       <div className="formstep2__header">
-        <div className="headerbuttonwrap">placholder0-button</div>
+        <div className="headerbuttonwrap">
+          <DynamicGoBack content="Back to Payment Options" />
+        </div>
       </div>
       <div className="formstep2__body">
-        <div className="top">
-          <div className="top__titlewrap">Pay by {payMethod}</div>
-          <div className="top__progresswrap">placeholder1-progressbar</div>
-          <div className="top__pricewrap">${price}</div>
-          <div className="top__messagewrap">
+        <div className="toppage2">
+          {/* <div className="top__titlewrap">Pay by {payMethod}</div> */}
+          <div className="toppage2__titlewrap">Split Payment</div>
+          <div className="toppage2__progresswrap">
+            <FormPageTracker />
+          </div>
+          <div className="toppage2__pricewrap">${price}</div>
+          <div className="toppage2__messagewrap">
             For Uni Suchi - Seat {seatvalue}
           </div>
-          <div className="middle">
+          <div className="middlepage2">
             <PayWithButton method="Debit or Credit" text="some" />
             <PayWithButton method="Zelle" text="somehum" />
             <PayWithButton method="Apple Pay" text="somehumbum" />
           </div>
         </div>
 
-        <div className="bottom">
+        <div className="bottomtoppage2">
           <ComfirmPayment
             text="Confirm Payment"
             buttonclass="comfirmpaymentbutton"
