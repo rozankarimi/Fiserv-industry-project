@@ -1,0 +1,15 @@
+.goBackContainer{
+    cursor:pointer;
+    display:flex;
+    flex-direction: row;
+    padding: 1rem;
+    align-items: center;
+    &--logo{
+        padding-right: .5rem;
+    }
+    &--previouspage{
+        font-size: 20px;
+        align-self: center;
+        padding-bottom: 5px;
+    }
+}

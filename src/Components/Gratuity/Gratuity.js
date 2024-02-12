@@ -57,7 +57,7 @@ function Gratuity({ customGratuity, changeGratuity, gratuityTotal }) {
         </div>
       </div>
 
-      <Link to="/paymentPage">
+      {/* <Link to="/paymentPage">
         <div className="buttonBox">
           <button
             type="text"
@@ -69,7 +69,7 @@ function Gratuity({ customGratuity, changeGratuity, gratuityTotal }) {
             Confirm {customGratuity} ($ {gratuityTotal.toFixed(2)})
           </button>
         </div>
-      </Link>
+      </Link> */}
     </>
   );
 }
