@@ -116,6 +116,11 @@ const HomePage = () => {
             gratuityTotal={gratuityTotal}
           />
         ) : null}
+        <div className="buttonBox">
+          <button type="text" className="button">
+            <b>Continue to Payment Options</b>
+          </button>
+        </div>
       </>
     );
   }
