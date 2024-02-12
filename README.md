@@ -36,7 +36,6 @@
 
 ## Installation
 
-Install my-project with npm
 
 ```bash
   cd Fiserv-industry-project
