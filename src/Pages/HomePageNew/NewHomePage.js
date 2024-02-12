@@ -77,13 +77,26 @@ export default function HomePage() {
     fetchCustomerOrderList();
   }, []);
 
+  function round2two(num) {
+    let result = Math.round(num * 100) / 100;
+    return result;
+  }
+
   function settingGratuityState(value) {
     setLoadGratuity(value);
   }
 
+  function getUserGratuityValue(value) {
+    setCustomGratuity(value);
+    setGratuityTotal(subTotal * (customGratuity / 100));
+    setFinalPrice(subTotal + gratuityTotal + taxedTotal);
+  }
+
+  function updateValuesWithNewGratuityValue() {}
+
   // useEffect(() => {
-  //   getGratuityTotal();
-  //   getOrdertotal();
+  //   getUserGratuityValue();
+  //   console.log("using useEffect");
   // }, [customGratuity]);
 
   if (hasLoaded) {
@@ -109,8 +122,9 @@ export default function HomePage() {
             // this component is basically a "pop-up"
             // FIXIT: you can not "unrender it" iow, close it...
             <Gratuity
-            // customGratuity={customGratuity}
-            // changeGratuity={changeGratuity}
+              getUserGratuityValueFunc={getUserGratuityValue}
+              // customGratuity={customGratuity}
+              // changeGratuity={changeGratuity}
             />
           ) : null}
         </section>
