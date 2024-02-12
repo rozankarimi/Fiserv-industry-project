@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <img className="statasbar" src={statusBarLight} />
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/orderSummary" element={<HomePage />} />
@@ -29,7 +29,10 @@ function App() {
           />
           <Route path="/paymentSuccessPage" element={<PaymentSuccessPage />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+      <PaymentSuccessPage />
+      {/* <PaymentFormStep2Page /> */}
     </div>
   );
 }
