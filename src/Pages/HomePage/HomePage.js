@@ -27,6 +27,14 @@ export default function HomePage() {
     setCustomGratuity(eventValue);
   }
 
+  const handleCustomGratuity = (event) => {
+    // get the value of custom value
+    const val = event.target.value;
+    const valPercentage = (val / subTotal) * 100;
+    console.log(`%${valPercentage.toFixed(2)}`);
+ 
+  };
+
   const getGratuityTotal = () => {
     let totalgratuity = 0;
     const currentGratuity = customGratuity.includes("%")
@@ -113,6 +121,8 @@ export default function HomePage() {
               customGratuity={customGratuity}
               changeGratuity={changeGratuity}
               gratuityTotal={gratuityTotal}
+              setGratuityTotal={setGratuityTotal}
+              handleCustomGratuity={handleCustomGratuity}
             />
           ) : null}
           <button

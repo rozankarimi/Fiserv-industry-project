@@ -2,7 +2,6 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/fonts";
 
-
 .tipAmount {
   display: flex;
   flex-direction: column;
@@ -21,7 +20,7 @@
   }
 }
 
-.tipwrapper{
+.tipwrapper {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -31,7 +30,6 @@
 .popup_update {
   text-align: center;
   padding-bottom: 70px;
-
 }
 
 .pop-up {
@@ -46,4 +44,18 @@
 }
 .display-none {
   display: none;
+}
+.display-none {
+  display: none;
+}
+.custom-input {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 329px;
+  margin: 16px auto;
+}
+.custom-input:focus {
+  border: 2px solid #000;
 }
