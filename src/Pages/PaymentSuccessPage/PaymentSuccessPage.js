@@ -1,8 +1,8 @@
 import "./PaymentSuccessStyles.scss";
+
 import checkmark from "../../assets/images/checkmark.png";
 import FinalComfirmPayButton from "../../Components/GeneralButton/GeneralButton";
 import FormPageTracker from "../../Components/FormPageTracker/FormPageTracker";
-import TableSummary from "../../Components/OrderSummary/OrderSummary";
 import Footer from "../../Components/Footer/Footer";
 
 export default function PaymentSuccessPage() {

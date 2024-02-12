@@ -4,15 +4,14 @@ import arrowIcon from "../../assets/images/backarrowlogo.png";
 import "./DynamicGoBackStyles.scss";
 
 const DynamicGoBack = ({ content }) => {
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  //   const goBack = () => {
-  //     navigate(-1);
-  //   };
+  const goBack = () => {
+    navigate(-1);
+  };
 
   return (
-    // <div className="goBackContainer" onClick={goBack}>
-    <div className="goBackContainer">
+    <div className="goBackContainer" onClick={goBack}>
       <img className="goBackContainer--logo" src={arrowIcon} />
       <span className="goBackContainer--previouspage">{content}</span>
     </div>
