@@ -15,7 +15,7 @@ export default function PaymentOpPay1({ seatvalue }) {
         <div className="top">
           <div className="top__titlewrap">Payment Options</div>
           <div className="top__progresswrap">placeholder1-progressbar</div>
-          <div className="top__paymentmeans">
+          <div className="top__paymentoptions">
             <PaymentOptions />
           </div>
         </div>
