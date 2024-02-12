@@ -10,11 +10,42 @@ const HomePage = () => {
   const [reviewOrders, setReviewOrders] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [loadgratuity, setloadgratuity] = useState(false);
-  const [customGratuity, setCustomGratuity] = useState(0);
+  const [customGratuity, setCustomGratuity] = useState("0");
   const [gratuityTotal, setGratuityTotal] = useState(0);
   const [subTotal, setSubTotal] = useState(0);
   const [taxTotal, setTaxTotal] = useState(8.875);
   const [orderTotal, setOrderTotal] = useState(0);
+
+  function changeGratuity(event) {
+    const eventValue = event.target.innerText;
+    setCustomGratuity(eventValue);
+  }
+  // const getSubtotal = () => {
+  //   let totalPrice = 0;
+  //   reviewOrders.forEach((item) => {
+  //     totalPrice = totalPrice + item.item_total;
+  //   });
+  //   setSubTotal(totalPrice);
+  // };
+  // const getTaxTotal = () => {
+  //   let totaltax = 0;
+  //   totaltax = (subTotal * 8.875) / 100;
+  //   setTaxTotal(totaltax);
+  // };
+
+  const getGratuityTotal = () => {
+    let totalgratuity = 0;
+    const currentGratuity = customGratuity.includes("%")
+      ? customGratuity.replace("%", " ")
+      : customGratuity;
+    totalgratuity = (subTotal * Number(currentGratuity)) / 100;
+    setGratuityTotal(totalgratuity);
+    getOrdertotal();
+  };
+
+  const getOrdertotal = () => {
+    setOrderTotal(subTotal + taxTotal + gratuityTotal);
+  };
 
   const getCustomer = () => {
     axios
@@ -32,48 +63,29 @@ const HomePage = () => {
       .get("http://localhost:8080/review")
       .then((response) => {
         setReviewOrders(response.data);
+        return response;
+      })
+      .then((response) => {
+        // TOTAL PRICE
+        let totalPrice = 0;
+        response.data.forEach((item) => {
+          totalPrice = totalPrice + item.item_total;
+        });
+        // TAX TOTAL
+        let totalTax = 0;
+        totalTax = (totalPrice * 8.875) / 100;
+
+        // TOTAL ORDER
+        setTaxTotal(totalTax);
+        setSubTotal(totalPrice);
+        setOrderTotal(totalPrice + totalTax + gratuityTotal);
       })
       .then(() => {
-        getSubtotal();
-        gettaxTotal();
-      })
-      .then(() => {
-        setTimeout(() => {
-          setHasLoaded(true);
-        }, 1500);
+        setHasLoaded(true);
       })
       .catch((err) => {
         console.log(err);
       });
-  };
-
-  function changeGratuity(event) {
-    setCustomGratuity(event.target.innerText);
-    getgratuityTotal();
-  }
-  const getSubtotal = () => {
-    let totalPrice = 0;
-    reviewOrders.forEach((item) => {
-      totalPrice = totalPrice + item.item_total;
-    });
-    setSubTotal(totalPrice);
-  };
-  const gettaxTotal = () => {
-    let totaltax = 0;
-    totaltax = (subTotal * 8.875) / 100;
-    setTaxTotal(totaltax);
-    getordertotal();
-  };
-
-  const getgratuityTotal = () => {
-    let totalgratuity = 0;
-    totalgratuity = (subTotal * customGratuity.replace("%", " ")) / 100;
-    setGratuityTotal(totalgratuity);
-    getordertotal();
-  };
-  const getordertotal = () => {
-    let orderTotalPrice = subTotal + taxTotal + gratuityTotal;
-    setOrderTotal(orderTotalPrice);
   };
 
   useEffect(() => {
@@ -81,6 +93,10 @@ const HomePage = () => {
     getReviewOrders();
   }, []);
 
+  useEffect(() => {
+    getGratuityTotal();
+    getOrdertotal()
+  }, [customGratuity]);
   if (hasLoaded) {
     return (
       <>
@@ -89,7 +105,6 @@ const HomePage = () => {
         <OrderSummary
           loadgratuity={loadgratuity}
           setloadgratuity={setloadgratuity}
-          reviewOrders={reviewOrders}
           customGratuity={customGratuity}
           subTotal={subTotal}
           taxTotal={taxTotal}
@@ -105,6 +120,7 @@ const HomePage = () => {
       </>
     );
   }
+
   if (!hasLoaded) {
     return <LoadingPage />;
   }
