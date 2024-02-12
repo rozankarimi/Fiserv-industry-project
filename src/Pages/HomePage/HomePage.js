@@ -1,6 +1,5 @@
 import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 import DropDownOrder from "../../Components/DropDownOrder/DropDownOrder";
-import PaymentMethodButton from "../../Components/PaymentMethodButton/PaymentMethodButton";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import OrderSummary from "../../Components/OrderSummary/OrderSummary";
@@ -95,13 +94,12 @@ const HomePage = () => {
 
   useEffect(() => {
     getGratuityTotal();
-    getOrdertotal()
+    getOrdertotal();
   }, [customGratuity]);
   if (hasLoaded) {
     return (
       <>
         <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
-        <PaymentMethodButton />
         <OrderSummary
           loadgratuity={loadgratuity}
           setloadgratuity={setloadgratuity}
