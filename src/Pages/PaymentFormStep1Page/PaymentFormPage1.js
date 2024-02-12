@@ -1,6 +1,7 @@
 import "./PaymentFormPage1Styles.scss";
+
 import PaymentOptions from "../../Components/PaymentOptions/PaymentOptions";
-import NextStepButton from "../../Components/GeneralButton/GeneralButton";
+import GeneralNavigationButton from "../../Components/GeneralNavigationButton/GeneralNavigationButton";
 import DynamicGoBack from "../../Components/DynamicGoBack/DynamicGoBack";
 import FormPageTracker from "../../Components/FormPageTracker/FormPageTracker";
 import Footer from "../../Components/Footer/Footer";
@@ -27,9 +28,10 @@ export default function PaymentOpPay1({ seatvalue }) {
         </div>
 
         <div className="bottompage1">
-          <NextStepButton
+          <GeneralNavigationButton
             text={buttontext}
             buttonclass="comfirmpaymentbutton"
+            theroute="/selectpaymentmethod"
           />
         </div>
       </div>

@@ -1,8 +1,9 @@
 import "./PaymentFormPage2Styles.scss";
+
 import Footer from "../../Components/Footer/Footer";
 import PayWithButton from "../../Components/PayWithButton/PayWithButton";
-import ComfirmPayment from "../../Components/GeneralButton/GeneralButton";
 import FormPageTracker from "../../Components/FormPageTracker/FormPageTracker";
+import GeneralNavigationButton from "../../Components/GeneralNavigationButton/GeneralNavigationButton";
 import DynamicGoBack from "../../Components/DynamicGoBack/DynamicGoBack";
 
 export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
@@ -19,7 +20,6 @@ export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
       </div>
       <div className="formstep2__body">
         <div className="toppage2">
-          {/* <div className="top__titlewrap">Pay by {payMethod}</div> */}
           <div className="toppage2__titlewrap">Split Payment</div>
           <div className="toppage2__progresswrap">
             <FormPageTracker colorscheme="dark" />
@@ -36,9 +36,10 @@ export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
         </div>
 
         <div className="bottomtoppage2">
-          <ComfirmPayment
+          <GeneralNavigationButton
             text="Confirm Payment"
             buttonclass="comfirmpaymentbutton"
+            theroute="/paymentsuccess"
           />
         </div>
       </div>
