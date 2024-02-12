@@ -3,8 +3,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function Gratuity({ customGratuity, changeGratuity, gratuityTotal }) {
+function Gratuity({
+  customGratuity,
+  changeGratuity,
+  gratuityTotal,
+  setGratuityTotal,
+  handleCustomGratuity,
+}) {
   const [popUpClass, setPopUpClass] = useState("display-none");
+  const [showCustomInput, setShowCustomInput] = useState("");
   return (
     <>
       <div className="popup_update">
@@ -52,24 +59,25 @@ function Gratuity({ customGratuity, changeGratuity, gratuityTotal }) {
           >
             20%
           </p>
-
-          <p>Custom</p>
-        </div>
-      </div>
-
-      {/* <Link to="/paymentPage">
-        <div className="buttonBox">
-          <button
-            type="text"
-            className="button"
+          <p
             onClick={() => {
-              setPopUpClass("");
+              setShowCustomInput("custom-input");
             }}
           >
-            Confirm {customGratuity} ($ {gratuityTotal.toFixed(2)})
-          </button>
+            Custom
+          </p>
         </div>
-      </Link> */}
+        <input
+          className={`display-none ${showCustomInput}`}
+          // type="number
+          onChange={(event) => {
+            //
+            handleCustomGratuity(event);
+          }}
+        ></input>
+      </div>
+
+     
     </>
   );
 }

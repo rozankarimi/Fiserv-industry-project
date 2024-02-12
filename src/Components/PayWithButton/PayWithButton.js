@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import "./PaywithButtonStyles.scss";
 import Popup from "reactjs-popup";
-import zelleLogo from "../../assets/images/zellelogocropped.png";
+// import zelleLogo from "../../assets/images/zellelogocropped.png";
 import applePayLogo from "../../assets/images/applepaylogo-white.png";
 import PayPopUpMessageComp from "../PayPopUpMessage/PayPopUpMessageComp";
 
@@ -14,7 +14,7 @@ export default function PayWithButton({ method, text, classplaceholder }) {
   if (method === "Debit or Credit") {
     som = "Debit or Credit";
   } else if (method === "Zelle") {
-    som = <img src={zelleLogo} className="payicon1" alt="Zelle" />;
+    som = <img src={""} className="payicon1" alt="Zelle" />;
   } else if (method === "Apple Pay") {
     som = <img src={applePayLogo} className="payicon2" alt="Apple Pay" />;
   }
