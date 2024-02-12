@@ -10,45 +10,53 @@ function Gratuity({ customGratuity, changeGratuity, gratuityTotal }) {
       <div className="popup_update">
         <h3>Update Gratuity</h3>
       </div>
+
       <div className="tipAmount">
-        <p
-          onClick={(event) => {
-            event.preventDefault();
-            changeGratuity(event);
-          }}
-        >
-          10%
-        </p>
-        <p
-          onClick={(event) => {
-            event.preventDefault();
-            changeGratuity(event);
-          }}
-        >
-          15%
-        </p>
         <div className="tipAmount__default">
           <p className="tipAmount__default--top">${gratuityTotal.toFixed(2)}</p>
+        </div>
+
+        <div className="tipwrapper">
           <p
             onClick={(event) => {
               event.preventDefault();
               changeGratuity(event);
             }}
-            className="tipAmount__default--buttom"
+          >
+            10%
+          </p>
+
+          <p
+            onClick={(event) => {
+              event.preventDefault();
+              changeGratuity(event);
+            }}
+          >
+            15%
+          </p>
+
+          <p
+            onClick={(event) => {
+              event.preventDefault();
+              changeGratuity(event);
+            }}
           >
             18%
           </p>
+
+          <p
+            onClick={(event) => {
+              event.preventDefault();
+              changeGratuity(event);
+            }}
+          >
+            20%
+          </p>
+
+          <p>Custom</p>
         </div>
-        <p
-          onClick={(event) => {
-            event.preventDefault();
-            changeGratuity(event);
-          }}
-        >
-          20%
-        </p>
-        <p>Custom</p>
       </div>
+
       <Link to="/paymentPage">
         <div className="buttonBox">
           <button

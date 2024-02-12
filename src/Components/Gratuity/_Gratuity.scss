@@ -5,23 +5,29 @@
 
 .tipAmount {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   &__default {
+    width: 150px;
     border: 2px solid $buttonsplash;
     border-radius: 4px;
     padding: 0 5px;
     height: 50px;
 
     &--top {
-      position: relative;
-      bottom: 40px;
-    }
-    &--buttom {
-      position: absolute;
-      top: 1476px;
+      text-align: center;
     }
   }
 }
+
+.tipwrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 .popup_update {
   text-align: center;
   padding-bottom: 70px;
