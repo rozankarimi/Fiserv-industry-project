@@ -2,7 +2,10 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
-
+.tablesummarywrapper{
+    background-color:antiquewhite;
+    width: 100%;
+}
 .hero{
     margin: 16px;
     color: $textColorLight;

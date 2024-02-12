@@ -1,6 +1,12 @@
 @import "../../styles/partials/_mixins.scss";
 @import "../../styles/partials/_variables.scss";
 // @import "../../styles/partials/_mixins.scss";
+
+.dropdownwrapper{
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .review-orders {
   margin-top: 16px;
   margin-bottom: 19px;
@@ -12,7 +18,6 @@
     text-align: center;
     text-align: left;
     text-transform: capitalize;
-    padding: 0px 16px;
   }
   &__title {
     font-weight: 700;
@@ -78,7 +83,9 @@
 }
 
 .seats {
-  padding: 0px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  // padding: 0px 16px;
   overflow: hidden;
   margin: 0px;
 
