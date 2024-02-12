@@ -1,7 +1,7 @@
 import "./PaymentFormPage1Styles.scss";
-import Footer from "../../Components/Footer/Footer";
-import PayWithButton from "../../Components/PayWithButton/PayWithButton";
+import PaymentOptions from "../../Components/PaymentOptions/PaymentOptions";
 import ComfirmPayment from "../../Components/GeneralButton/GeneralButton";
+import Footer from "../../Components/Footer/Footer";
 
 export default function PaymentOpPay1({ seatvalue }) {
   seatvalue = 1;
@@ -16,7 +16,7 @@ export default function PaymentOpPay1({ seatvalue }) {
           <div className="top__titlewrap">Payment Options</div>
           <div className="top__progresswrap">placeholder1-progressbar</div>
           <div className="top__paymentmeans">
-            placeholder2-three radio buttons
+            <PaymentOptions />
           </div>
         </div>
 
