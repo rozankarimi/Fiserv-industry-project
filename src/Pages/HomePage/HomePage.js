@@ -1,9 +1,13 @@
+import "./HomePageStyles.scss";
+
 import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 import DropDownOrder from "../../Components/DropDownOrder/DropDownOrder";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import OrderSummary from "../../Components/OrderSummary/OrderSummary";
 import Gratuity from "../../Components/Gratuity/Gratuity";
+import Header from "../../Components/Header/Header";
+
 const HomePage = () => {
   const [customers, setCustomers] = useState([]);
   const [reviewOrders, setReviewOrders] = useState([]);
@@ -98,30 +102,31 @@ const HomePage = () => {
   }, [customGratuity, subTotal, taxTotal, gratuityTotal]);
   if (hasLoaded) {
     return (
-      <>
-        <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
-        <OrderSummary
-          loadgratuity={loadgratuity}
-          setloadgratuity={setloadgratuity}
-          customGratuity={customGratuity}
-          subTotal={subTotal}
-          taxTotal={taxTotal}
-          gratuityTotal={gratuityTotal}
-          orderTotal={orderTotal}
-        />
-        {loadgratuity === true ? (
-          <Gratuity
+      <main className="homepagewrapper">
+        <Header />
+        <section className="homepagewrapper__inner">
+          <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
+          <OrderSummary
+            loadgratuity={loadgratuity}
+            setloadgratuity={setloadgratuity}
             customGratuity={customGratuity}
-            changeGratuity={changeGratuity}
+            subTotal={subTotal}
+            taxTotal={taxTotal}
             gratuityTotal={gratuityTotal}
+            orderTotal={orderTotal}
           />
-        ) : null}
-        <div className="buttonBox">
-          <button type="text" className="button">
-            <b>Continue to Payment Options</b>
+          {loadgratuity === true ? (
+            <Gratuity
+              customGratuity={customGratuity}
+              changeGratuity={changeGratuity}
+              gratuityTotal={gratuityTotal}
+            />
+          ) : null}
+          <button type="text" className="buttonBoxwrapper">
+            Continue to Payment Options
           </button>
-        </div>
-      </>
+        </section>
+      </main>
     );
   }
 
