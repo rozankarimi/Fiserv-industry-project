@@ -1,9 +1,11 @@
 import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 import DropDownOrder from "../../Components/DropDownOrder/DropDownOrder";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import OrderSummary from "../../Components/OrderSummary/OrderSummary";
 import Gratuity from "../../Components/Gratuity/Gratuity";
+import "./HomePage.scss";
 const HomePage = () => {
   const [customers, setCustomers] = useState([]);
   const [reviewOrders, setReviewOrders] = useState([]);
@@ -96,9 +98,11 @@ const HomePage = () => {
     getGratuityTotal();
     getOrdertotal();
   }, [customGratuity]);
+
   if (hasLoaded) {
     return (
-      <>
+      <article className="home-page">
+        {" "}
         <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
         <OrderSummary
           loadgratuity={loadgratuity}
@@ -116,12 +120,14 @@ const HomePage = () => {
             gratuityTotal={gratuityTotal}
           />
         ) : null}
-        <div className="buttonBox">
-          <button type="text" className="button">
-            <b>Continue to Payment Options</b>
-          </button>
-        </div>
-      </>
+        <Link to="/paymentPage">
+          <div className="buttonBox">
+            <button type="text" className="button">
+              <b>Continue to Payment Options</b>
+            </button>
+          </div>
+        </Link>
+      </article>
     );
   }
 

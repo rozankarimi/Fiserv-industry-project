@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Gratuity({ customGratuity, changeGratuity, gratuityTotal }) {
-  const [popUpClass, setPopUpClass] = useState("display-none");
   return (
     <>
       <div className="popup_update">
@@ -49,19 +48,11 @@ function Gratuity({ customGratuity, changeGratuity, gratuityTotal }) {
         </p>
         <p>Custom</p>
       </div>
-      <Link to="/paymentPage">
-        <div className="buttonBox">
-          <button
-            type="text"
-            className="button"
-            onClick={() => {
-              setPopUpClass("");
-            }}
-          >
-            Confirm 18% ($ {gratuityTotal.toFixed()})
-          </button>
-        </div>
-      </Link>
+      <div className="buttonBox">
+        <button type="text" className="button">
+          Confirm 18% ($ {gratuityTotal.toFixed()})
+        </button>
+      </div>
     </>
   );
 }

@@ -4,8 +4,6 @@ import arraySort from "array-sort";
 import { v4 as uuidv4 } from "uuid";
 
 const DropDownOrder = (props) => {
-  // console.log(props.customers);
-  // console.log(props.reviewOrders);
   const [seats, setSeats] = useState([]);
   const [isSorted, setIsSorted] = useState(false);
 
