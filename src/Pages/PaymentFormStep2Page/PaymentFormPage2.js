@@ -22,7 +22,7 @@ export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
           {/* <div className="top__titlewrap">Pay by {payMethod}</div> */}
           <div className="toppage2__titlewrap">Split Payment</div>
           <div className="toppage2__progresswrap">
-            <FormPageTracker />
+            <FormPageTracker colorscheme="dark" />
           </div>
           <div className="toppage2__pricewrap">${price}</div>
           <div className="toppage2__messagewrap">
