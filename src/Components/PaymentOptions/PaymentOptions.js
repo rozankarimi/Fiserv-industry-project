@@ -8,7 +8,7 @@ export default function PayOptions({ amountofguest }) {
 
   return (
     <div className="payoptionswarp">
-      <div>{selection}</div>
+      {/* <div>{selection}</div> */}
       <form className="payoptionsform">
         <label class="container">
           Pay Entire Table Tab

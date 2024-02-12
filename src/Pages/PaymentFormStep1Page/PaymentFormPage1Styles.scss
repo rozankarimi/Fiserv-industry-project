@@ -53,7 +53,11 @@
         margin-bottom: 7rem;
     }
 
-    &__paymentmeans{
+    &__paymentoptions{
+        width: 100%;
+        // background-color: red;
+        display: flex;
+        justify-content: flex-start;
     }
 }
 .middle{
