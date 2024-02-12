@@ -2,13 +2,12 @@ import { useState, useEffect } from "react";
 import "./PaymentOptionsStyles.scss";
 
 export default function PayOptions({ amountofguest }) {
-  amountofguest = 3;
+  amountofguest = 4;
 
   const [selection, setSelection] = useState("");
 
   return (
     <div className="payoptionswarp">
-      {/* <div>{selection}</div> */}
       <form className="payoptionsform">
         <label class="container">
           Pay Entire Table Tab
