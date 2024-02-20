@@ -1,7 +1,7 @@
 import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import HomePage from "./Pages/HomePage/HomePage";
+import HomePageNew from "./Pages/HomePageNew/NewHomePage";
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import PaymentFormStep1Page from "./Pages/PaymentFormStep1Page/PaymentFormPage1";
 import PaymentFormStep2Page from "./Pages/PaymentFormStep2Page/PaymentFormPage2";
@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/orderSummary" element={<HomePage />} />
+          <Route path="/orderSummary" element={<HomePageNew />} />
           <Route
             path="/selectpaymentoptions"
             element={<PaymentFormStep1Page />}

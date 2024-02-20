@@ -1,0 +1,49 @@
+.homepagewrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //FIXIT: vey poor responsive desgin
+
+    &__inner{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        background-color: rgb(235, 235, 235);
+        border-radius: 26px;
+    }
+
+    &__buttonsection{
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+        // background-color: white;
+    }
+}
+
+
+.buttonBoxwrapper {
+    padding: 0rem;
+    width: 361px;
+    height: 46px;
+    aspect-ratio: 1/0.105263;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(72, 50,202);
+    color: white;
+    text-transform: capitalize;
+    font-size: 18px;
+
+    // effects and animations
+    
+    &:hover{
+        background-color: rgb(75, 75, 75);
+    }
+
+    &:active{
+        background-color: rgb(39, 39, 39);
+    }
+  }
