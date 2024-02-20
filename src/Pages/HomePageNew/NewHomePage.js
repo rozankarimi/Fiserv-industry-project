@@ -6,8 +6,8 @@ import Header from "../../Components/Header/Header";
 import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 import DropDownOrder from "../../Components/DropDownOrder/DropDownOrder";
 import PaymentMethodButton from "../../Components/PaymentMethodButton/PaymentMethodButton";
-import OrderSummary from "../../Components/OrderSummary/OrderSummary";
-import Gratuity from "../../Components/Gratuity/Gratuity";
+import OrderSummaryNew from "../../Components/OrderSummaryNew/OrderSummaryNew";
+import GratuityNew from "../../Components/GratuityNew/GratuityNew";
 
 export default function HomePage() {
   const [loadGratuity, setLoadGratuity] = useState(false);
@@ -109,7 +109,7 @@ export default function HomePage() {
         <section className="homepagewrapper__inner">
           <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
 
-          <OrderSummary
+          <OrderSummaryNew
             getGratuityState={getGratuityState}
             customGratuityValue={customGratuity}
             subTotal={subTotal}
@@ -123,7 +123,7 @@ export default function HomePage() {
 
             // this component is basically a "pop-up"
             // FIXIT: you can not "unrender it" iow, close it...
-            <Gratuity getGratuitycPercentage={getGratuityPercentage} />
+            <GratuityNew getGratuitycPercentage={getGratuityPercentage} />
           ) : null}
         </section>
       </main>
