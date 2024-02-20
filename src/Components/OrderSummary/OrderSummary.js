@@ -1,14 +1,21 @@
 import "./_OrderSummary.scss";
-import React from "react";
+import React, { useState } from "react";
 
 function OrderSummary({
-  gratuityStateFunc,
+  getGratuityState,
   subTotal,
   taxTotal,
   finalTotal,
   gratuityTotal,
   customGratuityValue,
 }) {
+  const [displayPercentage, setDisplayPercentage] = useState(false);
+
+  function displayPercentageState() {
+    setDisplayPercentage(!displayPercentage);
+    getGratuityState(!displayPercentage);
+  }
+
   return (
     <section className="tablesummarywrapper">
       <h3 className="header">Table Summary</h3>
@@ -24,9 +31,12 @@ function OrderSummary({
         <div className="hero__price">
           <p>
             Gratuity({customGratuityValue}%)
-            <span onClick={() => gratuityStateFunc(true)} className="link">
-              Update
-            </span>
+            <button
+              onClick={displayPercentageState}
+              className="gratuityvisibilitybutton"
+            >
+              {displayPercentage ? "hide" : "edit"}
+            </button>
           </p>
           <p>${gratuityTotal.toFixed(2)}</p>
         </div>

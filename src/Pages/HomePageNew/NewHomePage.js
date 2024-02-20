@@ -82,22 +82,25 @@ export default function HomePage() {
     return result;
   }
 
-  function settingGratuityState(value) {
+  function getGratuityState(value) {
+    console.log(value);
     setLoadGratuity(value);
   }
 
-  function getUserGratuityValue(value) {
+  function getGratuityPercentage(value) {
+    // setCustomGratuity(value);
+    // setGratuityTotal(subTotal * (customGratuity / 100));
+    // setFinalPrice(subTotal + gratuityTotal + taxedTotal);
+
+    console.log(value);
     setCustomGratuity(value);
-    setGratuityTotal(subTotal * (customGratuity / 100));
-    setFinalPrice(subTotal + gratuityTotal + taxedTotal);
+    // setGratuityTotal(subTotal * value);
+    console.log(customGratuity);
+    // setGratuityTotal(subTotal * (Gratuity / 100));
+    // we have a snap-shot related problem
+    setGratuityTotal(subTotal * (value / 100));
+    setFinalPrice(subTotal + subTotal * (value / 100) + taxedTotal);
   }
-
-  function updateValuesWithNewGratuityValue() {}
-
-  // useEffect(() => {
-  //   getUserGratuityValue();
-  //   console.log("using useEffect");
-  // }, [customGratuity]);
 
   if (hasLoaded) {
     return (
@@ -107,8 +110,7 @@ export default function HomePage() {
           <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
 
           <OrderSummary
-            // loadGratuity={loadgratuity}
-            gratuityStateFunc={settingGratuityState}
+            getGratuityState={getGratuityState}
             customGratuityValue={customGratuity}
             subTotal={subTotal}
             taxTotal={taxedTotal}
@@ -121,11 +123,7 @@ export default function HomePage() {
 
             // this component is basically a "pop-up"
             // FIXIT: you can not "unrender it" iow, close it...
-            <Gratuity
-              getUserGratuityValueFunc={getUserGratuityValue}
-              // customGratuity={customGratuity}
-              // changeGratuity={changeGratuity}
-            />
+            <Gratuity getGratuitycPercentage={getGratuityPercentage} />
           ) : null}
         </section>
       </main>
