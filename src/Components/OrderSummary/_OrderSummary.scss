@@ -2,7 +2,10 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
-
+.tablesummarywrapper{
+    background-color:antiquewhite;
+    width: 100%;
+}
 .hero{
     margin: 16px;
     color: $textColorLight;
@@ -18,9 +21,9 @@
 .total{
     margin: 16px;
 }
-.link{
-    text-decoration: none;
-    padding-left: 15px;
-    color: $link;
-    cursor: pointer;
+.gratuityvisibilitybutton{
+    background-color: transparent;
+    border: none;
+    color: blue;
+    cursor:pointer;
 }

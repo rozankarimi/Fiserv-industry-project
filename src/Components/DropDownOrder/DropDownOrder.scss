@@ -2,11 +2,18 @@
 @import "../../styles/partials/_variables.scss";
 // @import "../../styles/partials/_mixins.scss";
 
-.review-orders {
-  margin-top: 16px;
-  margin-bottom: 19px;
+.dropdownwrapper{
+  width: 100%;
+  padding: 0px 1rem;
+  box-sizing: border-box;
+  background-color: white;
   border-radius:20px 20px 0px 0px;
-  box-shadow: 0px -1px 0px lightgray;
+}
+
+.review-orders {
+  box-sizing: border-box;
+  margin-bottom: 19px;
+  padding-top: 1.5rem;
   &__header {
     // HEADER
     display: flex;
@@ -28,7 +35,9 @@
 }
 
 .seats {
-  padding: 0px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  // padding: 0px 16px;
   overflow: hidden;
   margin: 0px;
 

@@ -1,4 +1,5 @@
 import "./DropDownOrder.scss";
+
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -29,7 +30,7 @@ const DropDownOrder = (props) => {
 
   if (isSorted) {
     return (
-      <>
+      <section className="dropdownwrapper">
         <section className="review-orders">
           <div className="review-orders__header">
             <h2 className="review-orders__title">
@@ -79,7 +80,7 @@ const DropDownOrder = (props) => {
             );
           })}
         </article>
-      </>
+      </section>
     );
   }
 };
