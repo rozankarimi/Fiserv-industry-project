@@ -1,5 +1,6 @@
-import "./_Header.scss";
+import "./HeaderStyles.scss";
 import React, { Component } from "react";
+
 import background from "../../assets/images/Ellipse 51.png";
 
 class Header extends Component {

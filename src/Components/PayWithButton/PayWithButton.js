@@ -4,7 +4,6 @@ import "./PaywithButtonStyles.scss";
 import Popup from "reactjs-popup";
 // import zelleLogo from "../../assets/images/zellelogocropped.png";
 import applePayLogo from "../../assets/images/applepaylogo-white.png";
-
 import PayPopUpMessageComp from "../PayPopUpMessage/PayPopUpMessageComp";
 
 export default function PayWithButton({ method, text, classplaceholder }) {

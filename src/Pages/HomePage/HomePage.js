@@ -1,11 +1,15 @@
+import "./HomePageStyles.scss";
+
 import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 import DropDownOrder from "../../Components/DropDownOrder/DropDownOrder";
-import PaymentMethodButton from "../../Components/PaymentMethodButton/PaymentMethodButton";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import OrderSummary from "../../Components/OrderSummary/OrderSummary";
 import Gratuity from "../../Components/Gratuity/Gratuity";
-const HomePage = () => {
+import Header from "../../Components/Header/Header";
+import { useNavigate } from "react-router-dom";
+
+export default function HomePage() {
   const [customers, setCustomers] = useState([]);
   const [reviewOrders, setReviewOrders] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -16,22 +20,20 @@ const HomePage = () => {
   const [taxTotal, setTaxTotal] = useState(8.875);
   const [orderTotal, setOrderTotal] = useState(0);
 
+  const navigate = useNavigate();
+
   function changeGratuity(event) {
     const eventValue = event.target.innerText;
     setCustomGratuity(eventValue);
   }
-  // const getSubtotal = () => {
-  //   let totalPrice = 0;
-  //   reviewOrders.forEach((item) => {
-  //     totalPrice = totalPrice + item.item_total;
-  //   });
-  //   setSubTotal(totalPrice);
-  // };
-  // const getTaxTotal = () => {
-  //   let totaltax = 0;
-  //   totaltax = (subTotal * 8.875) / 100;
-  //   setTaxTotal(totaltax);
-  // };
+
+  const handleCustomGratuity = (event) => {
+    // get the value of custom value
+    const val = event.target.value;
+    const valPercentage = (val / subTotal) * 100;
+    console.log(`%${valPercentage.toFixed(2)}`);
+ 
+  };
 
   const getGratuityTotal = () => {
     let totalgratuity = 0;
@@ -95,34 +97,47 @@ const HomePage = () => {
 
   useEffect(() => {
     getGratuityTotal();
-    getOrdertotal()
-  }, [customGratuity]);
+    getOrdertotal();
+  }, [customGratuity, subTotal, taxTotal, gratuityTotal]);
+
+  function homePageButtonHandler() {}
   if (hasLoaded) {
     return (
-      <>
-        <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
-        <PaymentMethodButton />
-        <OrderSummary
-          loadgratuity={loadgratuity}
-          setloadgratuity={setloadgratuity}
-          customGratuity={customGratuity}
-          subTotal={subTotal}
-          taxTotal={taxTotal}
-          gratuityTotal={gratuityTotal}
-          orderTotal={orderTotal}
-        />
-        {loadgratuity === true ? (
-          <Gratuity
+      <main className="homepagewrapper">
+        <Header />
+        <section className="homepagewrapper__inner">
+          <DropDownOrder customers={customers} reviewOrders={reviewOrders} />
+          <OrderSummary
+            loadgratuity={loadgratuity}
+            setloadgratuity={setloadgratuity}
             customGratuity={customGratuity}
-            changeGratuity={changeGratuity}
+            subTotal={subTotal}
+            taxTotal={taxTotal}
+            gratuityTotal={gratuityTotal}
+            orderTotal={orderTotal}
           />
-        ) : null}
-      </>
+          {loadgratuity === true ? (
+            <Gratuity
+              customGratuity={customGratuity}
+              changeGratuity={changeGratuity}
+              gratuityTotal={gratuityTotal}
+              setGratuityTotal={setGratuityTotal}
+              handleCustomGratuity={handleCustomGratuity}
+            />
+          ) : null}
+          <button
+            type="text"
+            className="buttonBoxwrapper"
+            onClick={() => navigate("/selectpaymentoptions")}
+          >
+            Continue to Payment Options
+          </button>
+        </section>
+      </main>
     );
   }
 
   if (!hasLoaded) {
     return <LoadingPage />;
   }
-};
-export default HomePage;
+}

@@ -1,6 +1,9 @@
 import "./PaymentFormPage1Styles.scss";
+
 import PaymentOptions from "../../Components/PaymentOptions/PaymentOptions";
-import ComfirmPayment from "../../Components/GeneralButton/GeneralButton";
+import GeneralNavigationButton from "../../Components/GeneralNavigationButton/GeneralNavigationButton";
+import DynamicGoBack from "../../Components/DynamicGoBack/DynamicGoBack";
+import FormPageTracker from "../../Components/FormPageTracker/FormPageTracker";
 import Footer from "../../Components/Footer/Footer";
 
 export default function PaymentOpPay1({ seatvalue }) {
@@ -9,21 +12,26 @@ export default function PaymentOpPay1({ seatvalue }) {
   return (
     <div className="formstep2">
       <div className="formstep2__header">
-        <div className="headerbuttonwrap">placholder0-button</div>
+        <div className="headerbuttonwrap">
+          <DynamicGoBack content="Back to Table Summary" />
+        </div>
       </div>
       <div className="formstep2__body">
-        <div className="top">
-          <div className="top__titlewrap">Payment Options</div>
-          <div className="top__progresswrap">placeholder1-progressbar</div>
-          <div className="top__paymentoptions">
+        <div className="toppage1">
+          <div className="toppage1__titlewrap">Payment Options</div>
+          <div className="toppage1__progresswrap">
+            <FormPageTracker />
+          </div>
+          <div className="toppage1__paymentoptions">
             <PaymentOptions />
           </div>
         </div>
 
-        <div className="bottom">
-          <ComfirmPayment
+        <div className="bottompage1">
+          <GeneralNavigationButton
             text={buttontext}
             buttonclass="comfirmpaymentbutton"
+            theroute="/selectpaymentmethod"
           />
         </div>
       </div>
