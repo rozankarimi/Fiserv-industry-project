@@ -7,11 +7,9 @@ import PaymentFormStep1Page from "./Pages/PaymentFormStep1Page/PaymentFormPage1"
 import PaymentFormStep2Page from "./Pages/PaymentFormStep2Page/PaymentFormPage2";
 import PaymentSuccessPage from "./Pages/PaymentSuccessPage/PaymentSuccessPage";
 
-import statusBarLight from "./assets/images/StatusBarLight.png";
 function App() {
   return (
     <div className="App">
-      <img className="statasbar" src={statusBarLight} />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
