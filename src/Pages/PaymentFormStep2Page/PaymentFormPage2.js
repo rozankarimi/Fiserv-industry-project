@@ -6,10 +6,17 @@ import FormPageTracker from "../../Components/FormPageTracker/FormPageTracker";
 import GeneralNavigationButton from "../../Components/GeneralNavigationButton/GeneralNavigationButton";
 import DynamicGoBack from "../../Components/DynamicGoBack/DynamicGoBack";
 
-export default function PaymentOpPay1({ payMethod, price, seatvalue }) {
+export default function PaymentOpPay1({
+  payMethod,
+  price,
+  seatvalue,
+  getStatusBarTheme,
+}) {
   payMethod = "Seat";
   price = 39.82;
   seatvalue = 1;
+
+  getStatusBarTheme("dark");
 
   return (
     <div className="formstep2">

@@ -2,14 +2,14 @@ import "./HomePageNewStyles.scss";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Header from "../../Components/Header/Header";
 
+import Header from "../../Components/Header/Header";
 import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 import DropDownOrder from "../../Components/DropDownOrder/DropDownOrder";
 import OrderSummaryNew from "../../Components/OrderSummaryNew/OrderSummaryNew";
 import GratuityNew from "../../Components/GratuityNew/GratuityNew";
 
-export default function HomePage() {
+export default function HomePage({ getStatusBarTheme }) {
   const navigate = useNavigate();
   const [loadGratuity, setLoadGratuity] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -25,6 +25,8 @@ export default function HomePage() {
   const [reviewOrders, setReviewOrders] = useState([]);
 
   const [finalprice, setFinalPrice] = useState(0);
+
+  getStatusBarTheme("light");
 
   const fetchCustomerListMembers = () => {
     // this return an array of people's [cus_id, cus_name, pref_pay, e-mail]
