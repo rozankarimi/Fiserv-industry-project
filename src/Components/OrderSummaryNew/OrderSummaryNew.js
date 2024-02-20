@@ -18,7 +18,7 @@ function OrderSummary({
 
   return (
     <section className="tablesummarywrapper">
-      <h3 className="header">Table Summary</h3>
+      <h3 className="tablesummaryheader">Table Summary</h3>
       <div className="hero">
         <div className="hero__price">
           <p>Subtotal</p>
@@ -41,10 +41,10 @@ function OrderSummary({
           <p>${gratuityTotal.toFixed(2)}</p>
         </div>
       </div>
-      <div className="total">
-        <div className="hero__price">
-          <h4>Order Total</h4>
-          <p>${finalTotal.toFixed(2)}</p>
+      <div className="totalwrapper">
+        <div className="totalbox">
+          <h4 className="totalbox__title">Order Total</h4>
+          <p className="totalbox__price">${finalTotal.toFixed(2)}</p>
         </div>
       </div>
     </section>

@@ -1,26 +1,47 @@
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
+h3, h4{
+    //reset
+    margin: 0rem;
+}
+
+p{
+    //reset
+    margin: 0rem;
+}
 
 .tablesummarywrapper{
-    background-color:antiquewhite;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+    background-color:white;
     width: 100%;
 }
 .hero{
-    margin: 16px;
     color: $textColorLight;
     &__price{
+        width: 100%;
         display: flex;
         justify-content: space-between;
+        margin-top: 1rem;
+    }    
+}
+
+.totalwrapper{
+    width: 100%;
+    margin-top: 1rem;
+    .totalbox{
+        display: flex;
+        justify-content: space-between;
+
+        &__price{
+            padding: 0rem;
+        }
     }
-    
 }
-.header{
-    margin: 16px;
-}
-.total{
-    margin: 16px;
-}
+
 .gratuityvisibilitybutton{
     background-color: transparent;
     border: none;

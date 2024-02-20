@@ -2,6 +2,11 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/fonts";
 
+.gratuitywrapper{
+    background-color: white;
+    width: 100%;
+}
+
 .tipAmount{
     display: flex;
     justify-content: space-evenly;
@@ -38,4 +43,36 @@
 .buttonBox{
     padding-top: 70px;
     text-align: center;
+}
+
+.gratuityform{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0rem 1rem;
+
+
+    &__top{
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+
+        .gratuitypercentbutton{
+            background-color: transparent;
+            border: none;
+
+            &:focus{
+                border: 2px solid black;
+                border-radius: 3px;
+            }
+        }
+    }
+
+    &__bottom{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 }

@@ -2,11 +2,19 @@
 @import "../../styles/partials/_variables.scss";
 // @import "../../styles/partials/_mixins.scss";
 
+.dropdownwrapper{
+  width: 100%;
+  padding: 0px 1rem;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius:20px 20px 0px 0px;
+}
+
 .review-orders {
+  box-sizing: border-box;
   margin-top: 16px;
   margin-bottom: 19px;
-  border-radius:20px 20px 0px 0px;
-  box-shadow: 0px -1px 0px lightgray;
+  padding-top: 1.5rem;
   &__header {
     // HEADER
     display: flex;

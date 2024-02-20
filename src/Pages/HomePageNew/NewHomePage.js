@@ -1,15 +1,16 @@
 import "./HomePageNewStyles.scss";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../../Components/Header/Header";
 
 import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 import DropDownOrder from "../../Components/DropDownOrder/DropDownOrder";
-import PaymentMethodButton from "../../Components/PaymentMethodButton/PaymentMethodButton";
 import OrderSummaryNew from "../../Components/OrderSummaryNew/OrderSummaryNew";
 import GratuityNew from "../../Components/GratuityNew/GratuityNew";
 
 export default function HomePage() {
+  const navigate = useNavigate();
   const [loadGratuity, setLoadGratuity] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [subTotal, setSubTotal] = useState(0);
@@ -61,7 +62,7 @@ export default function HomePage() {
         setTaxedTotal(thetaxedTotal);
         setSubTotal(totalPrice);
         setOrderTotal(totalPrice + thetaxedTotal);
-        setFinalPrice(orderTotal);
+        setFinalPrice(totalPrice + thetaxedTotal);
       })
       .then(() => {
         setHasLoaded(true);
@@ -77,21 +78,12 @@ export default function HomePage() {
     fetchCustomerOrderList();
   }, []);
 
-  function round2two(num) {
-    let result = Math.round(num * 100) / 100;
-    return result;
-  }
-
   function getGratuityState(value) {
     console.log(value);
     setLoadGratuity(value);
   }
 
   function getGratuityPercentage(value) {
-    // setCustomGratuity(value);
-    // setGratuityTotal(subTotal * (customGratuity / 100));
-    // setFinalPrice(subTotal + gratuityTotal + taxedTotal);
-
     console.log(value);
     setCustomGratuity(value);
     // setGratuityTotal(subTotal * value);
@@ -125,6 +117,16 @@ export default function HomePage() {
             // FIXIT: you can not "unrender it" iow, close it...
             <GratuityNew getGratuitycPercentage={getGratuityPercentage} />
           ) : null}
+
+          <section className="homepagewrapper__buttonsection">
+            <button
+              type="text"
+              className="buttonBoxwrapper"
+              onClick={() => navigate("/selectpaymentoptions")}
+            >
+              Continue to Payment Options
+            </button>
+          </section>
         </section>
       </main>
     );
