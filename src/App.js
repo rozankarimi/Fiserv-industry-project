@@ -62,14 +62,3 @@ function App() {
 }
 
 export default App;
-
-/*  
-  atm, idk how you would keep track of the active route within 
-  the App.js file, (params...) if we could, we could simply import 
-  PhoneUIBar once and then how it track the route and depending on 
-  the route we would conditionally set which theme we want for the 
-  status bar
-
-  so instead, we just create a new component that will get told what 
-  to display depending on the component that is calling it..
-*/
