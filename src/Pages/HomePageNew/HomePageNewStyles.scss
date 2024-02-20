@@ -1,3 +1,12 @@
+.some{
+    position: fixed;
+    top:0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    z-index: 1000;
+}
 .homepagewrapper{
     display: flex;
     flex-direction: column;

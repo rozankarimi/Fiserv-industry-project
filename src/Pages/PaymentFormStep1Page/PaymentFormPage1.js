@@ -6,8 +6,10 @@ import DynamicGoBack from "../../Components/DynamicGoBack/DynamicGoBack";
 import FormPageTracker from "../../Components/FormPageTracker/FormPageTracker";
 import Footer from "../../Components/Footer/Footer";
 
-export default function PaymentOpPay1({ seatvalue }) {
+export default function PaymentOpPay1({ seatvalue, getStatusBarTheme }) {
   seatvalue = 1;
+  getStatusBarTheme("dark");
+
   let buttontext = `Start Seat ${seatvalue} Payment`;
   return (
     <div className="formstep2">

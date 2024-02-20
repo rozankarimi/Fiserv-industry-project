@@ -5,7 +5,8 @@ import FinalComfirmPayButton from "../../Components/GeneralButton/GeneralButton"
 import FormPageTracker from "../../Components/FormPageTracker/FormPageTracker";
 import Footer from "../../Components/Footer/Footer";
 
-export default function PaymentSuccessPage() {
+export default function PaymentSuccessPage({ getStatusBarTheme }) {
+  getStatusBarTheme("light");
   return (
     <div className="paymentsucccesspage">
       <div className="paymentsucccesspage__backgrounddiv"></div>
