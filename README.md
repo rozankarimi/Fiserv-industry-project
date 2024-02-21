@@ -47,5 +47,5 @@ Install dependencies with npm
 ```
  To render use
  ```bash
-  npm start in CLI
+  npm start
 ```
